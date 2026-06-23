@@ -16,38 +16,16 @@
 
     header {
       background: #0D2137;
-      border-bottom: none;
       padding: 18px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
+    .logo { display: flex; align-items: center; gap: 14px; }
 
-    .logo-text {
-      font-size: 24px;
-      font-weight: 800;
-      color: #ffffff;
-      letter-spacing: -0.5px;
-    }
-
-    .header-meta {
-      text-align: right;
-      font-size: 13px;
-      color: rgba(255,255,255,0.6);
-    }
-
-    .header-meta strong {
-      display: block;
-      font-size: 15px;
-      color: #ffffff;
-      margin-bottom: 2px;
-    }
+    .header-meta { text-align: right; font-size: 13px; color: rgba(255,255,255,0.6); }
+    .header-meta strong { display: block; font-size: 15px; color: #ffffff; margin-bottom: 2px; }
 
     main {
       max-width: 960px;
@@ -55,54 +33,68 @@
       padding: 40px 24px;
     }
 
-    .page-title {
-      font-size: 26px;
-      font-weight: 700;
-      margin-bottom: 6px;
+    .page-title { font-size: 26px; font-weight: 700; margin-bottom: 6px; }
+    .page-subtitle { color: #666; font-size: 14px; margin-bottom: 28px; }
+
+    /* TAB NAV */
+    .tab-nav {
+      display: flex;
+      border-bottom: 2px solid #e4e8ef;
+      margin-bottom: 28px;
+      gap: 4px;
     }
 
-    .page-subtitle {
-      color: #666;
-      font-size: 14px;
-      margin-bottom: 36px;
-    }
-
-    .market-section {
-      margin-bottom: 44px;
-    }
-
-    .market-header {
+    .tab-btn {
+      padding: 10px 22px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #888;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
+      gap: 8px;
+      transition: color 0.15s;
     }
 
-    .market-flag {
-      font-size: 26px;
+    .tab-btn:hover { color: #0D2137; }
+
+    .tab-btn.active {
+      color: #0D2137;
+      border-bottom-color: #0D2137;
     }
 
-    .market-title {
-      font-size: 19px;
+    .tab-flag { font-size: 18px; }
+
+    /* TAB CONTENT */
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* SUB-SECTION (for Norge AON / PM) */
+    .sub-section { margin-bottom: 32px; }
+
+    .sub-section-header {
+      font-size: 11px;
       font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e4e8ef;
     }
 
-    .market-divider {
-      flex: 1;
-      height: 1px;
-      background: #dde1e9;
-    }
-
-    .campaign-grid {
-      display: grid;
-      gap: 16px;
-    }
+    /* CAMPAIGN CARDS */
+    .campaign-grid { display: grid; gap: 14px; }
 
     .campaign-card {
       background: #fff;
       border-radius: 12px;
       border: 1px solid #e4e8ef;
-      padding: 22px 24px;
+      padding: 20px 22px;
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 16px;
@@ -110,9 +102,7 @@
       transition: box-shadow 0.2s;
     }
 
-    .campaign-card:hover {
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    }
+    .campaign-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
 
     .campaign-type {
       display: inline-block;
@@ -122,65 +112,34 @@
       letter-spacing: 0.8px;
       padding: 3px 9px;
       border-radius: 20px;
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
 
-    .type-aon {
-      background: #e8f4fd;
-      color: #1a7cc4;
-    }
+    .type-aon { background: #e8f4fd; color: #1a7cc4; }
+    .type-special { background: #fff0e6; color: #c2500a; }
+    .type-pm { background: #eaf3de; color: #3b6d11; }
 
-    .type-special {
-      background: #fff0e6;
-      color: #c2500a;
-    }
+    .campaign-name { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+    .campaign-period { font-size: 13px; color: #888; margin-bottom: 13px; }
 
-    .type-kampanj {
-      background: #fef3e2;
-      color: #c47a1a;
-    }
-
-    .campaign-name {
-      font-size: 17px;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .campaign-period {
-      font-size: 13px;
-      color: #888;
-      margin-bottom: 14px;
-    }
-
-    .products {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+    .products { display: flex; gap: 8px; flex-wrap: wrap; }
 
     .product-chip {
       background: #f4f6f9;
       border: 1px solid #dde1e9;
       border-radius: 6px;
-      padding: 5px 11px;
+      padding: 4px 10px;
       font-size: 12px;
     }
 
-    .product-chip .label {
-      font-weight: 600;
-      color: #444;
-    }
-
-    .product-chip .amount {
-      color: #666;
-      margin-left: 5px;
-    }
+    .product-chip .label { font-weight: 600; color: #444; }
+    .product-chip .amount { color: #666; margin-left: 4px; }
 
     .card-actions {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      gap: 10px;
+      gap: 9px;
     }
 
     .status-badge {
@@ -193,43 +152,28 @@
       gap: 5px;
     }
 
-    .status-live {
-      background: #e6f9f0;
-      color: #16a34a;
-    }
-
+    .status-live { background: #e6f9f0; color: #16a34a; }
     .status-live::before {
       content: '';
-      width: 7px;
-      height: 7px;
+      width: 7px; height: 7px;
       background: #16a34a;
       border-radius: 50%;
       animation: pulse 1.5s infinite;
     }
 
-    .status-planned {
-      background: #f1f5f9;
-      color: #64748b;
-    }
-
-    .status-planned::before {
+    .status-confirmed { background: #fff7e6; color: #b45309; }
+    .status-confirmed::before {
       content: '';
-      width: 7px;
-      height: 7px;
-      background: #94a3b8;
+      width: 7px; height: 7px;
+      background: #f59e0b;
       border-radius: 50%;
     }
 
-    .status-confirmed {
-      background: #fff7e6;
-      color: #b45309;
-    }
-
-    .status-confirmed::before {
+    .status-planned { background: #f1f5f9; color: #64748b; }
+    .status-planned::before {
       content: '';
-      width: 7px;
-      height: 7px;
-      background: #f59e0b;
+      width: 7px; height: 7px;
+      background: #94a3b8;
       border-radius: 50%;
     }
 
@@ -245,7 +189,7 @@
       background: #E8334A;
       color: white;
       text-decoration: none;
-      padding: 9px 18px;
+      padding: 8px 16px;
       border-radius: 8px;
       font-size: 13px;
       font-weight: 600;
@@ -253,72 +197,29 @@
       white-space: nowrap;
     }
 
-    .btn-report:hover {
-      background: #c9273d;
-    }
-
-    .btn-report svg {
-      width: 14px;
-      height: 14px;
-    }
-
-    .btn-planned {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: #f1f5f9;
-      color: #94a3b8;
-      text-decoration: none;
-      padding: 9px 18px;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: default;
-      white-space: nowrap;
-    }
+    .btn-report:hover { background: #c9273d; }
+    .btn-report svg { width: 14px; height: 14px; }
 
     .total-row {
       background: #f8f9fc;
       border-radius: 10px;
-      padding: 14px 24px;
+      padding: 14px 22px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 6px;
+      margin-top: 4px;
       border: 1px solid #e4e8ef;
     }
 
-    .total-label {
-      font-size: 13px;
-      font-weight: 600;
-      color: #666;
-    }
-
-    .total-amounts {
-      display: flex;
-      gap: 24px;
-    }
-
-    .total-item {
-      text-align: right;
-    }
-
-    .total-item .t-label {
-      font-size: 11px;
-      color: #999;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .total-item .t-value {
-      font-size: 15px;
-      font-weight: 700;
-      color: #1a1a2e;
-    }
+    .total-label { font-size: 13px; font-weight: 600; color: #666; }
+    .total-amounts { display: flex; gap: 24px; }
+    .total-item { text-align: right; }
+    .total-item .t-label { font-size: 11px; color: #999; text-transform: uppercase; letter-spacing: 0.5px; }
+    .total-item .t-value { font-size: 15px; font-weight: 700; color: #1a1a2e; }
 
     footer {
       text-align: center;
-      padding: 30px;
+      padding: 28px;
       color: #bbb;
       font-size: 12px;
       border-top: 1px solid #e4e8ef;
@@ -342,14 +243,17 @@
   <div class="page-title">Elkjøp 2026/27</div>
   <p class="page-subtitle">Klicka på "Se rapport" för att följa leverans i realtid via Gotom.</p>
 
-  <!-- SVERIGE -->
-  <div class="market-section">
-    <div class="market-header">
-      <span class="market-flag">🇸🇪</span>
-      <span class="market-title">Sverige</span>
-      <div class="market-divider"></div>
-    </div>
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('se', this)">
+      <span class="tab-flag">🇸🇪</span> Sverige
+    </button>
+    <button class="tab-btn" onclick="showTab('no', this)">
+      <span class="tab-flag">🇳🇴</span> Norge
+    </button>
+  </div>
 
+  <!-- ═══════════ SVERIGE ═══════════ -->
+  <div id="tab-se" class="tab-content active">
     <div class="campaign-grid">
 
       <!-- AON Juni SE -->
@@ -359,18 +263,9 @@
           <div class="campaign-name">Elgiganten SE – AON Juni</div>
           <div class="campaign-period">Order 32684 &nbsp;·&nbsp; 17 juni – 30 juni 2026 &nbsp;·&nbsp; v.25–27</div>
           <div class="products">
-            <div class="product-chip">
-              <span class="label">ROC</span>
-              <span class="amount">33 408 kr</span>
-            </div>
-            <div class="product-chip">
-              <span class="label">Welcome Page</span>
-              <span class="amount">110 592 kr</span>
-            </div>
-            <div class="product-chip">
-              <span class="label">Totalt</span>
-              <span class="amount">144 000 kr</span>
-            </div>
+            <div class="product-chip"><span class="label">ROC</span><span class="amount">33 408 kr</span></div>
+            <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">110 592 kr</span></div>
+            <div class="product-chip"><span class="label">Totalt</span><span class="amount">144 000 kr</span></div>
           </div>
         </div>
         <div class="card-actions">
@@ -685,114 +580,137 @@
     </div>
   </div>
 
-  <!-- NORGE -->
-  <div class="market-section">
-    <div class="market-header">
-      <span class="market-flag">🇳🇴</span>
-      <span class="market-title">Norge</span>
-      <div class="market-divider"></div>
+  <!-- ═══════════ NORGE ═══════════ -->
+  <div id="tab-no" class="tab-content">
+
+    <div class="tab-nav" style="margin-bottom: 20px;">
+      <button class="tab-btn active" onclick="showSubTab('aon', this)">AON – Always-On</button>
+      <button class="tab-btn" onclick="showSubTab('pm', this)">PM – Partner Marketing</button>
     </div>
 
-    <div class="campaign-grid">
+    <!-- AON SUB-SECTION -->
+    <div id="subtab-aon" class="sub-section">
+      <div class="campaign-grid">
 
-      <!-- AON Juni NO -->
-      <div class="campaign-card">
-        <div>
-          <span class="campaign-type type-aon">Always-On</span>
-          <div class="campaign-name">Elkjøp NO – AON Juni</div>
-          <div class="campaign-period">Order 32685 &nbsp;·&nbsp; 17 juni – 30 juni 2026 &nbsp;·&nbsp; v.25–27</div>
-          <div class="products">
-            <div class="product-chip">
-              <span class="label">Welcome Page</span>
-              <span class="amount">117 500 NOK</span>
-            </div>
-            <div class="product-chip">
-              <span class="label">ROC</span>
-              <span class="amount">23 500 NOK</span>
-            </div>
-            <div class="product-chip">
-              <span class="label">Totalt</span>
-              <span class="amount">141 000 NOK</span>
+        <!-- AON Juni NO -->
+        <div class="campaign-card">
+          <div>
+            <span class="campaign-type type-aon">Always-On</span>
+            <div class="campaign-name">Elkjøp NO – AON Juni</div>
+            <div class="campaign-period">Order 32685 &nbsp;·&nbsp; 17 juni – 30 juni 2026 &nbsp;·&nbsp; v.25–27</div>
+            <div class="products">
+              <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">117 500 NOK</span></div>
+              <div class="product-chip"><span class="label">ROC</span><span class="amount">23 500 NOK</span></div>
+              <div class="product-chip"><span class="label">Totalt</span><span class="amount">141 000 NOK</span></div>
             </div>
           </div>
-        </div>
-        <div class="card-actions">
-          <span class="status-badge status-live">Live nu</span>
-          <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1175/bc8cd543dba15b0c206ac1087a6c1ab4?reportingPeriod%5B1%5D=duration" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Se rapport
-          </a>
-          <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1175/8c6593807781613e09eda60986f8de9e" target="_blank" style="background:#4a7fc1;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            Se skärmdumpar
-          </a>
-        </div>
-      </div>
-
-      <!-- AON Juli NO -->
-      <div class="campaign-card">
-        <div>
-          <span class="campaign-type type-aon">Always-On</span>
-          <div class="campaign-name">Elkjøp NO – AON Juli 2026</div>
-          <div class="campaign-period">Order 32724 &nbsp;·&nbsp; 1 jul – 31 jul 2026 &nbsp;·&nbsp; v.27–31</div>
-          <div class="products">
-            <div class="product-chip"><span class="label">ROC</span><span class="amount">84 600 NOK</span></div>
-            <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">56 400 NOK</span></div>
-            <div class="product-chip"><span class="label">Totalt</span><span class="amount">141 000 NOK</span></div>
+          <div class="card-actions">
+            <span class="status-badge status-live">Live nu</span>
+            <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1175/bc8cd543dba15b0c206ac1087a6c1ab4?reportingPeriod%5B1%5D=duration" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Se rapport
+            </a>
+            <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1175/8c6593807781613e09eda60986f8de9e" target="_blank" style="background:#4a7fc1;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Se skärmdumpar
+            </a>
           </div>
         </div>
-        <div class="card-actions">
-          <span class="status-badge status-confirmed">Bokad</span>
-          <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1190/d6939225eb363f8b9a15abb36528a9fa" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Se rapport</a>
-          <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1190/ed343772eba164579ea5f9b965433f98" target="_blank" style="background:#4a7fc1;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Se skärmdumpar</a>
-        </div>
-      </div>
 
-      <!-- AON Aug NO -->
-      <div class="campaign-card">
-        <div>
-          <span class="campaign-type type-aon">Always-On</span>
-          <div class="campaign-name">Elkjøp NO – AON Aug 2026</div>
-          <div class="campaign-period">Order 32743 &nbsp;·&nbsp; 1 aug – 31 aug 2026 &nbsp;·&nbsp; v.31–36</div>
-          <div class="products">
-            <div class="product-chip"><span class="label">ROC</span><span class="amount">84 600 NOK</span></div>
-            <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">56 400 NOK</span></div>
-            <div class="product-chip"><span class="label">Totalt</span><span class="amount">141 000 NOK</span></div>
+        <!-- AON Juli NO -->
+        <div class="campaign-card">
+          <div>
+            <span class="campaign-type type-aon">Always-On</span>
+            <div class="campaign-name">Elkjøp NO – AON Juli 2026</div>
+            <div class="campaign-period">Order 32724 &nbsp;·&nbsp; 1 jul – 31 jul 2026 &nbsp;·&nbsp; v.27–31</div>
+            <div class="products">
+              <div class="product-chip"><span class="label">ROC</span><span class="amount">84 600 NOK</span></div>
+              <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">56 400 NOK</span></div>
+              <div class="product-chip"><span class="label">Totalt</span><span class="amount">141 000 NOK</span></div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <span class="status-badge status-confirmed">Bokad</span>
+            <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1190/d6939225eb363f8b9a15abb36528a9fa" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Se rapport
+            </a>
+            <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1190/ed343772eba164579ea5f9b965433f98" target="_blank" style="background:#4a7fc1;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Se skärmdumpar
+            </a>
           </div>
         </div>
-        <div class="card-actions">
-          <span class="status-badge status-confirmed">Bokad</span>
-          <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1191/6d60ef49935cf118f24b95f3ca7adc25" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Se rapport</a>
-          <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1191/df789e403b03f2c557229d4630c8d23b" target="_blank" style="background:#4a7fc1;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Se skärmdumpar</a>
-        </div>
-      </div>
 
-      <!-- AON Sep NO -->
-      <div class="campaign-card">
-        <div>
-          <span class="campaign-type type-aon">Always-On</span>
-          <div class="campaign-name">Elkjøp NO – AON Sep 2026</div>
-          <div class="campaign-period">Order 32744 &nbsp;·&nbsp; 1 sep – 30 sep 2026 &nbsp;·&nbsp; v.36–40</div>
-          <div class="products">
-            <div class="product-chip"><span class="label">ROC</span><span class="amount">84 600 NOK</span></div>
-            <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">56 400 NOK</span></div>
-            <div class="product-chip"><span class="label">Totalt</span><span class="amount">141 000 NOK</span></div>
+        <!-- AON Aug NO -->
+        <div class="campaign-card">
+          <div>
+            <span class="campaign-type type-aon">Always-On</span>
+            <div class="campaign-name">Elkjøp NO – AON Aug 2026</div>
+            <div class="campaign-period">Order 32743 &nbsp;·&nbsp; 1 aug – 31 aug 2026 &nbsp;·&nbsp; v.31–36</div>
+            <div class="products">
+              <div class="product-chip"><span class="label">ROC</span><span class="amount">84 600 NOK</span></div>
+              <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">56 400 NOK</span></div>
+              <div class="product-chip"><span class="label">Totalt</span><span class="amount">141 000 NOK</span></div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <span class="status-badge status-confirmed">Bokad</span>
+            <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1191/6d60ef49935cf118f24b95f3ca7adc25" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Se rapport
+            </a>
+            <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1191/df789e403b03f2c557229d4630c8d23b" target="_blank" style="background:#4a7fc1;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Se skärmdumpar
+            </a>
           </div>
         </div>
-        <div class="card-actions">
-          <span class="status-badge status-confirmed">Bokad</span>
-          <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1192/6df5df0e131de1400471fe7a41e31355" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Se rapport</a>
-          <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1192/a0728019ebcd59eeea2ead5747ceb98e" target="_blank" style="background:#4a7fc1;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Se skärmdumpar</a>
-        </div>
-      </div>
-        </div>
-        <div class="card-actions">
-          <span class="status-badge status-planned">Planerad</span>
-          <span class="btn-planned">Rapport ej tillgänglic</span>
-        </div>
-      </div>
 
+        <!-- AON Sep NO -->
+        <div class="campaign-card">
+          <div>
+            <span class="campaign-type type-aon">Always-On</span>
+            <div class="campaign-name">Elkjøp NO – AON Sep 2026</div>
+            <div class="campaign-period">Order 32744 &nbsp;·&nbsp; 1 sep – 30 sep 2026 &nbsp;·&nbsp; v.36–40</div>
+            <div class="products">
+              <div class="product-chip"><span class="label">ROC</span><span class="amount">84 600 NOK</span></div>
+              <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">56 400 NOK</span></div>
+              <div class="product-chip"><span class="label">Totalt</span><span class="amount">141 000 NOK</span></div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <span class="status-badge status-confirmed">Bokad</span>
+            <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1192/6df5df0e131de1400471fe7a41e31355" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Se rapport
+            </a>
+            <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1192/a0728019ebcd59eeea2ead5747ceb98e" target="_blank" style="background:#4a7fc1;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Se skärmdumpar
+            </a>
+          </div>
+        </div>
+
+      </div>
     </div>
+
+    <!-- PM SUB-SECTION -->
+    <div id="subtab-pm" class="sub-section" style="display:none;">
+      <div class="campaign-grid">
+        <div class="campaign-card" style="border-style: dashed; background: #fafbfc;">
+          <div>
+            <span class="campaign-type type-pm">PM</span>
+            <div class="campaign-name" style="color:#999;">Kommande PM-kampanjer</div>
+            <div class="campaign-period">Läggs till allt eftersom bokningar bekräftas</div>
+          </div>
+          <div class="card-actions">
+            <span class="status-badge status-planned">Planerad</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
 </main>
@@ -800,6 +718,23 @@
 <footer>
   Prisjakt &nbsp;·&nbsp; Powered by Gotom &nbsp;·&nbsp; Rapporthubben uppdateras löpande vartefter kampanjer bokas in.
 </footer>
+
+<script>
+  function showTab(id, btn) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    btn.closest('.tab-nav').querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + id).classList.add('active');
+  }
+
+  function showSubTab(id, btn) {
+    document.getElementById('subtab-aon').style.display = 'none';
+    document.getElementById('subtab-pm').style.display = 'none';
+    document.getElementById('subtab-' + id).style.display = 'block';
+    btn.closest('.tab-nav').querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    btn.classList.add('active');
+  }
+</script>
 
 </body>
 </html>
