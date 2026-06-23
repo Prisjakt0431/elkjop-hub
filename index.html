@@ -78,7 +78,7 @@
 
     .sub-section-header {
       font-size: 11px;
-      font-weight: 700;
+  2   font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: #aaa;
@@ -254,6 +254,14 @@
 
   <!-- ═══════════ SVERIGE ═══════════ -->
   <div id="tab-se" class="tab-content active">
+
+    <div class="tab-nav" style="margin-bottom: 20px;">
+      <button class="tab-btn active" onclick="showSubTab('subtab-se-aon', this)">AON – Always-On</button>
+      <button class="tab-btn" onclick="showSubTab('subtab-se-pm', this)">PM – Partner Marketing</button>
+    </div>
+
+    <!-- AON SUB-SECTION -->
+    <div id="subtab-se-aon" class="sub-section">
     <div class="campaign-grid">
 
       <!-- AON Juni SE -->
@@ -376,7 +384,7 @@
           <span class="status-badge status-confirmed">Bokad</span>
           <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1183/b1032c78a2d18906a7b30aaa00bd448f" target="_blank">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Se rapport
+  2         Se rapport
           </a>
           <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1183/fb2a7cf37278750c6f86c4212caa8225" target="_blank" style="background:#4a7fc1;">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
@@ -568,6 +576,23 @@
       </div>
 
     </div>
+    </div>
+
+    <!-- PM SUB-SECTION -->
+    <div id="subtab-se-pm" class="sub-section" style="display:none;">
+      <div class="campaign-grid">
+        <div class="campaign-card" style="border-style: dashed; background: #fafbfc;">
+          <div>
+            <span class="campaign-type type-pm">PM</span>
+            <div class="campaign-name" style="color:#999;">Kommande PM-kampanjer</div>
+            <div class="campaign-period">Läggs till allt eftersom bokningar bekräftas</div>
+          </div>
+          <div class="card-actions">
+            <span class="status-badge status-planned">Planerad</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="total-row">
       <span class="total-label">Total Sverige (Juli 2026 – April 2027)</span>
@@ -584,12 +609,12 @@
   <div id="tab-no" class="tab-content">
 
     <div class="tab-nav" style="margin-bottom: 20px;">
-      <button class="tab-btn active" onclick="showSubTab('aon', this)">AON – Always-On</button>
-      <button class="tab-btn" onclick="showSubTab('pm', this)">PM – Partner Marketing</button>
+      <button class="tab-btn active" onclick="showSubTab('subtab-no-aon', this)">AON – Always-On</button>
+      <button class="tab-btn" onclick="showSubTab('subtab-no-pm', this)">PM – Partner Marketing</button>
     </div>
 
     <!-- AON SUB-SECTION -->
-    <div id="subtab-aon" class="sub-section">
+    <div id="subtab-no-aon" class="sub-section">
       <div class="campaign-grid">
 
         <!-- AON Juni NO -->
@@ -696,7 +721,7 @@
     </div>
 
     <!-- PM SUB-SECTION -->
-    <div id="subtab-pm" class="sub-section" style="display:none;">
+    <div id="subtab-no-pm" class="sub-section" style="display:none;">
       <div class="campaign-grid">
         <div class="campaign-card" style="border-style: dashed; background: #fafbfc;">
           <div>
@@ -728,10 +753,11 @@
   }
 
   function showSubTab(id, btn) {
-    document.getElementById('subtab-aon').style.display = 'none';
-    document.getElementById('subtab-pm').style.display = 'none';
-    document.getElementById('subtab-' + id).style.display = 'block';
-    btn.closest('.tab-nav').querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    const nav = btn.closest('.tab-nav');
+    const container = nav.parentElement;
+    container.querySelectorAll('.sub-section').forEach(el => el.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+    nav.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
     btn.classList.add('active');
   }
 </script>
