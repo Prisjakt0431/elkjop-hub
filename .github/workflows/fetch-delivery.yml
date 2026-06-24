@@ -1,0 +1,36 @@
+name: Fetch Delivery Data
+
+on:
+  schedule:
+    # Runs every day at 07:00 UTC (09:00 Swedish summer time)
+    - cron: "0 7 * * *"
+  workflow_dispatch: # Allow manual trigger from GitHub UI
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Fetch delivery data from Gotom
+        run: python fetch_delivery.py
+
+      - name: Commit and push delivery.json
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add delivery.json
+          git diff --staged --quiet && echo "No changes to commit" || \
+            git commit -m "chore: update delivery data [skip ci]" && git push
