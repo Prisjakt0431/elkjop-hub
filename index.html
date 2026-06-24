@@ -259,8 +259,8 @@
       transition: width 0.5s ease;
     }
     .delivery-fill.good { background: #22c55e; }
-    .delivery-fill.warn { background: #f59e0b; }
-    .delivery-fill.bad  { background: #ef4444; }
+    .delivery-fill.warn { background: #22c55e; }
+    .delivery-fill.bad  { background: #22c55e; }
     .delivery-pct {
       width: 42px;
       text-align: right;
@@ -269,8 +269,8 @@
       flex-shrink: 0;
     }
     .delivery-pct.good { color: #16a34a; }
-    .delivery-pct.warn { color: #d97706; }
-    .delivery-pct.bad  { color: #dc2626; }
+    .delivery-pct.warn { color: #16a34a; }
+    .delivery-pct.bad  { color: #16a34a; }
     /* ── Underleverans tab ─────────────────────────────────────── */
     .under-grid { display: grid; gap: 16px; }
     .under-card {
@@ -898,6 +898,9 @@
       const id = card.dataset.reportId;
       const d = _delivery[id];
       if (!d || !d.products || Object.keys(d.products).length === 0) return;
+
+      // Skip campaigns that are still live (not yet finished)
+      if (card.querySelector('.status-live')) return;
 
       // Only include if at least one product has pct < 95 and is not null
       const prods = d.products;
