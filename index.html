@@ -234,7 +234,7 @@
       border-top: 1px solid #f0f0f0;
     }
     .delivery-section::before {
-      content: 'Pacing';
+      content: 'Levererat';
       display: block;
       font-size: 10px;
       font-weight: 600;
@@ -424,7 +424,7 @@
 <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1181/fdb610295414f686fdc0149ca8b3e05a" target="_blank">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
             Se rapport
-    0     </a>
+          </a>
 <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1181/688f08c03a0ed3f24b7741d3fc712502" style="background:#4a7fc1;" target="_blank">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
             Se skärmdumpar
@@ -538,8 +538,8 @@
 <div class="campaign-name">Elgiganten SE – AON December</div>
 <div class="campaign-period">Order 32738  ·  1 dec – 31 dec 2026  ·  v.49–53</div>
 <div class="products">
-<div class="product-chip"><span class="label">ROC</span><span class="amount">134 608 kr</span></div>
-<div class="product-chip"><span class="label">Welcome Page</span><span class="amount">234 669 kr</span></div>
+<div class="product-chip"><span class="label">ROC</span><span class="amount">134 068 kr</span></div>
+<div class="product-chip"><span class="label">Welcome Page</span><span class="amount">234 706 kr</span></div>
 <div class="product-chip"><span class="label">A.E</span><span class="amount">63 226 kr</span></div>
 <div class="product-chip"><span class="label">Totalt</span><span class="amount">432 000 kr</span></div>
 </div><div class="delivery-section" style="display:none;"><div class="delivery-bars"></div></div>
@@ -883,7 +883,7 @@
       Object.entries(data.products).forEach(([prod, d]) => {
         const pct = d.pct;
         if (pct === null || pct === undefined) return; // not started yet
-    0   const cls = deliveryClass(pct);
+        const cls = deliveryClass(pct);
         const width = Math.min(Math.max(pct, 0), 100);
         barsEl.innerHTML += `
           <div class="delivery-bar">
