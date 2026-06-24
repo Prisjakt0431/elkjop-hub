@@ -126,6 +126,10 @@ def fetch_campaign(campaign):
         pct       = parse_pct(delivered_pct_str)
         delivered = parse_number(value_delivered_str)
 
+        # Fallback: compute pct from booked/delivered if Gotom column is empty
+        if pct is None and booked and delivered:
+            pct = round(delivered / booked * 100, 1)
+
         products[product] = {
             "booked":    booked,
             "delivered": delivered,
