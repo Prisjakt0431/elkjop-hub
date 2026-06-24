@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="sv">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elkjøp 2026/27</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Elkjøp 2026/27</title>
+<style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
@@ -78,7 +79,7 @@
 
     .sub-section-header {
       font-size: 11px;
-  2   font-weight: 700;
+      font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: #aaa;
@@ -225,533 +226,595 @@
       border-top: 1px solid #e4e8ef;
       margin-top: 20px;
     }
-  </style>
+  
+    /* ── Delivery bars ─────────────────────────────────────────── */
+    .delivery-section {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid #f0f0f0;
+    }
+    .delivery-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 5px;
+      font-size: 12px;
+    }
+    .delivery-prod-name {
+      width: 96px;
+      color: #666;
+      font-size: 11px;
+      flex-shrink: 0;
+    }
+    .delivery-track {
+      flex: 1;
+      height: 6px;
+      background: #e8e8e8;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .delivery-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 0.5s ease;
+    }
+    .delivery-fill.good { background: #22c55e; }
+    .delivery-fill.warn { background: #f59e0b; }
+    .delivery-fill.bad  { background: #ef4444; }
+    .delivery-pct {
+      width: 42px;
+      text-align: right;
+      font-size: 11px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    .delivery-pct.good { color: #16a34a; }
+    .delivery-pct.warn { color: #d97706; }
+    .delivery-pct.bad  { color: #dc2626; }
+    /* ── Underleverans tab ─────────────────────────────────────── */
+    .under-grid { display: grid; gap: 16px; }
+    .under-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .under-card-header { margin-bottom: 12px; }
+    .under-prod-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 5px 0;
+      border-bottom: 1px solid #f5f5f5;
+      font-size: 13px;
+    }
+    .under-prod-row:last-child { border-bottom: none; }
+    .under-prod-name { flex: 1; color: #555; }
+    .under-diff { font-size: 12px; color: #888; min-width: 100px; text-align: right; }
+    .under-total {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 2px solid #f0f0f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .under-total-label { font-size: 12px; color: #999; }
+    .under-total-value { font-size: 18px; font-weight: 700; }
+    .under-total-value.bad  { color: #dc2626; }
+    .under-total-value.good { color: #16a34a; }
+    .under-empty {
+      text-align: center;
+      color: #aaa;
+      padding: 48px 0;
+      font-size: 15px;
+    }
+    .under-loading {
+      text-align: center;
+      color: #bbb;
+      padding: 32px 0;
+      font-size: 14px;
+    }
+</style>
 </head>
 <body>
-
 <header>
-  <div class="logo">
-    <img src="https://cdn.pji.nu/g/rfe/logos/logo_se_v2_light.svg" alt="Prisjakt" style="height:32px;">
-  </div>
-  <div class="header-meta">
-    <strong>Elkjøp 2026/27</strong>
+<div class="logo">
+<img alt="Prisjakt" src="https://cdn.pji.nu/g/rfe/logos/logo_se_v2_light.svg" style="height:32px;"/>
+</div>
+<div class="header-meta">
+<strong>Elkjøp 2026/27</strong>
     Kampanjöversikt · Uppdaterad 22 juni 2026
   </div>
 </header>
-
 <main>
-  <div class="page-title">Elkjøp 2026/27</div>
-  <p class="page-subtitle">Klicka på "Se rapport" för att följa leverans i realtid via Gotom.</p>
-
-  <div class="tab-nav">
-    <button class="tab-btn active" onclick="showTab('se', this)">
-      <span class="tab-flag">🇸🇪</span> Sverige
+<div class="page-title">Elkjøp 2026/27</div>
+<p class="page-subtitle">Klicka på "Se rapport" för att följa leverans i realtid via Gotom.</p>
+<div class="tab-nav">
+<button class="tab-btn active" onclick="showTab('se', this)">
+<span class="tab-flag">🇸🇪</span> Sverige
     </button>
-    <button class="tab-btn" onclick="showTab('no', this)">
-      <span class="tab-flag">🇳🇴</span> Norge
+<button class="tab-btn" onclick="showTab('no', this)">
+<span class="tab-flag">🇳🇴</span> Norge
     </button>
-  </div>
-
-  <!-- ═══════════ SVERIGE ═══════════ -->
-  <div id="tab-se" class="tab-content active">
-
-    <div class="tab-nav" style="margin-bottom: 20px;">
-      <button class="tab-btn active" onclick="showSubTab('subtab-se-aon', this)">AON – Always-On</button>
-      <button class="tab-btn" onclick="showSubTab('subtab-se-pm', this)">PM – Partner Marketing</button>
-    </div>
-
-    <!-- AON SUB-SECTION -->
-    <div id="subtab-se-aon" class="sub-section">
-    <div class="campaign-grid">
-
-      <!-- AON Juni SE -->
-      <div class="campaign-card">
-        <div>
-          <span class="campaign-type type-aon">Always-On</span>
-          <div class="campaign-name">Elgiganten SE – AON Juni</div>
-          <div class="campaign-period">Order 32684 &nbsp;·&nbsp; 17 juni – 30 juni 2026 &nbsp;·&nbsp; v.25–27</div>
-          <div class="products">
-            <div class="product-chip"><span class="label">ROC</span><span class="amount">33 408 kr</span></div>
-            <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">110 592 kr</span></div>
-            <div class="product-chip"><span class="label">Totalt</span><span class="amount">144 000 kr</span></div>
-          </div>
-        </div>
-        <div class="card-actions">
-          <span class="status-badge status-live">Live nu</span>
-          <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1176/6206f3e3dc2868875ea4b4bda3120732?reportingPeriod%5B1%5D=duration" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+</div>
+<!-- ═══════════ SVERIGE ═══════════ -->
+<div class="tab-content active" id="tab-se">
+<div class="tab-nav" style="margin-bottom: 20px;">
+<button class="tab-btn active" onclick="showSubTab('subtab-se-aon', this)">AON – Always-On</button>
+<button class="tab-btn" onclick="showSubTab('subtab-se-pm', this)">PM – Partner Marketing</button>
+<button class="tab-btn" onclick="showSubTab('subtab-se-under", this)">Underleverans</button></div>
+<!-- AON SUB-SECTION -->
+<div class="sub-section" id="subtab-se-aon">
+<div class="campaign-grid">
+<!-- AON Juni SE -->
+<div class="campaign-card" data-report-id="1176">
+<div>
+<span class="campaign-type type-aon">Always-On</span>
+<div class="campaign-name">Elgiganten SE – AON Juni</div>
+<div class="campaign-period">Order 32684  ·  17 juni – 30 juni 2026  ·  v.25–27</div>
+<div class="products">
+<div class="product-chip"><span class="label">ROC</span><span class="amount">33 408 kr</span></div>
+<div class="product-chip"><span class="label">Welcome Page</span><span class="amount">110 592 kr</span></div>
+<div class="product-chip"><span class="label">Totalt</span><span class="amount">144 000 kr</span></div>
+</div><div class="delivery-section" style="display:none;"><div class="delivery-bars"></div></div>
+</div>
+<div class="card-actions">
+<span class="status-badge status-live">Live nu</span>
+<a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1176/6206f3e3dc2868875ea4b4bda3120732?reportingPeriod%5B1%5D=duration" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
             Se rapport
           </a>
-          <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1176/e5dff3db1ef94345c9bc98cc06e43860" target="_blank" style="background:#4a7fc1;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+<a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1176/e5dff3db1ef94345c9bc98cc06e43860" style="background:#4a7fc1;" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
             Se skärmdumpar
           </a>
-        </div>
-      </div>
-
-      <!-- AON Juli SE -->
-      <div class="campaign-card">
-        <div>
-          <span class="campaign-type type-aon">Always-On</span>
-          <div class="campaign-name">Elgiganten SE – AON Juli</div>
-          <div class="campaign-period">Order 32714 &nbsp;·&nbsp; 1 juli – 31 juli 2026 &nbsp;·&nbsp; v.27–31</div>
-          <div class="products">
-            <div class="product-chip"><span class="label">ROC</span><span class="amount">44 689 kr</span></div>
-            <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">78 235 kr</span></div>
-            <div class="product-chip"><span class="label">A.E</span><span class="amount">21 076 kr</span></div>
-            <div class="product-chip"><span class="label">Totalt</span><span class="amount">144 000 kr</span></div>
-          </div>
-        </div>
-        <div class="card-actions">
-          <span class="status-badge status-confirmed">Bokad</span>
-          <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1180/c858e7512dbf170e0df906fbc582c9b7" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+</div>
+</div>
+<!-- AON Juli SE -->
+<div class="campaign-card" data-report-id="1180">
+<div>
+<span class="campaign-type type-aon">Always-On</span>
+<div class="campaign-name">Elgiganten SE – AON Juli</div>
+<div class="campaign-period">Order 32714  ·  1 juli – 31 juli 2026  ·  v.27–31</div>
+<div class="products">
+<div class="product-chip"><span class="label">ROC</span><span class="amount">44 689 kr</span></div>
+<div class="product-chip"><span class="label">Welcome Page</span><span class="amount">78 235 kr</span></div>
+<div class="product-chip"><span class="label">A.E</span><span class="amount">21 076 kr</span></div>
+<div class="product-chip"><span class="label">Totalt</span><span class="amount">144 000 kr</span></div>
+</div><div class="delivery-section" style="display:none;"><div class="delivery-bars"></div></div>
+</div>
+<div class="card-actions">
+<span class="status-badge status-confirmed">Bokad</span>
+<a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1180/c858e7512dbf170e0df906fbc582c9b7" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
             Se rapport
           </a>
-          <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1180/7136632f6c0b59a47f4afefcb4b9fe24" target="_blank" style="background:#4a7fc1;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+<a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1180/7136632f6c0b59a47f4afefcb4b9fe24" style="background:#4a7fc1;" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
             Se skärmdumpar
           </a>
-        </div>
-      </div>
-
-      <!-- AON Augusti SE -->
-      <div class="campaign-card">
-        <div>
-          <span class="campaign-type type-aon">Always-On</span>
-          <div class="campaign-name">Elgiganten SE – AON Augusti</div>
-          <div class="campaign-period">Order 32734 &nbsp;·&nbsp; 1 aug – 31 aug 2026 &nbsp;·&nbsp; v.31–36</div>
-          <div class="products">
-            <div class="product-chip"><span class="label">ROC</span><span class="amount">59 586 kr</span></div>
-            <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">104 314 kr</span></div>
-            <div class="product-chip"><span class="label">A.E</span><span class="amount">28 100 kr</span></div>
-            <div class="product-chip"><span class="label">Totalt</span><span class="amount">192 000 kr</span></div>
-          </div>
-        </div>
-        <div class="card-actions">
-          <span class="status-badge status-confirmed">Bokad</span>
-          <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1181/fdb610295414f686fdc0149ca8b3e05a" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+</div>
+</div>
+<!-- AON Augusti SE -->
+<div class="campaign-card" data-report-id="1181">
+<div>
+<span class="campaign-type type-aon">Always-On</span>
+<div class="campaign-name">Elgiganten SE – AON Augusti</div>
+<div class="campaign-period">Order 32734  ·  1 aug – 31 aug 2026  ·  v.31–36</div>
+<div class="products">
+<div class="product-chip"><span class="label">ROC</span><span class="amount">59 586 kr</span></div>
+<div class="product-chip"><span class="label">Welcome Page</span><span class="amount">104 314 kr</span></div>
+<div class="product-chip"><span class="label">A.E</span><span class="amount">28 100 kr</span></div>
+<div class="product-chip"><span class="label">Totalt</span><span class="amount">192 000 kr</span></div>
+</div><div class="delivery-section" style="display:none;"><div class="delivery-bars"></div></div>
+</div>
+<div class="card-actions">
+<span class="status-badge status-confirmed">Bokad</span>
+<a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1181/fdb610295414f686fdc0149ca8b3e05a" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
             Se rapport
           </a>
-          <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1181/688f08c03a0ed3f24b7741d3fc712502" target="_blank" style="background:#4a7fc1;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+<a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1181/688f08c03a0ed3f24b7741d3fc712502" style="background:#4a7fc1;" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
             Se skärmdumpar
           </a>
-        </div>
-      </div>
-
-      <!-- AON September SE -->
-      <div class="campaign-card">
-        <div>
-          <span class="campaign-type type-aon">Always-On</span>
-          <div class="campaign-name">Elgiganten SE – AON September</div>
-          <div class="campaign-period">Order 32735 &nbsp;·&nbsp; 1 sep – 30 sep 2026 &nbsp;·&nbsp; v.36–40</div>
-          <div class="products">
-            <div class="product-chip"><span class="label">ROC</span><span class="amount">59 586 kr</span></div>
-            <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">104 314 kr</span></div>
-            <div class="product-chip"><span class="label">A.E</span><span class="amount">28 100 kr</span></div>
-            <div class="product-chip"><span class="label">Totalt</span><span class="amount">192 000 kr</span></div>
-          </div>
-        </div>
-        <div class="card-actions">
-          <span class="status-badge status-confirmed">Bokad</span>
-          <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1182/98856ddf26060fa0bd2da9b6cff4cd38" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+</div>
+</div>
+<!-- AON September SE -->
+<div class="campaign-card" data-report-id="1182">
+<div>
+<span class="campaign-type type-aon">Always-On</span>
+<div class="campaign-name">Elgiganten SE – AON September</div>
+<div class="campaign-period">Order 32735  ·  1 sep – 30 sep 2026  ·  v.36–40</div>
+<div class="products">
+<div class="product-chip"><span class="label">ROC</span><span class="amount">59 586 kr</span></div>
+<div class="product-chip"><span class="label">Welcome Page</span><span class="amount">104 314 kr</span></div>
+<div class="product-chip"><span class="label">A.E</span><span class="amount">28 100 kr</span></div>
+<div class="product-chip"><span class="label">Totalt</span><span class="amount">192 000 kr</span></div>
+</div><div class="delivery-section" style="display:none;"><div class="delivery-bars"></div></div>
+</div>
+<div class="card-actions">
+<span class="status-badge status-confirmed">Bokad</span>
+<a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1182/98856ddf26060fa0bd2da9b6cff4cd38" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
             Se rapport
           </a>
-          <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1182/1df4e140c4889d56fedc04aeba5698a2" target="_blank" style="background:#4a7fc1;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+<a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1182/1df4e140c4889d56fedc04aeba5698a2" style="background:#4a7fc1;" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
             Se skärmdumpar
           </a>
-        </div>
-      </div>
-
-      <!-- AON Oktober SE -->
-      <div class="campaign-card">
-        <div>
-          <span class="campaign-type type-aon">Always-On</span>
-          <div class="campaign-name">Elgiganten SE – AON Oktober</div>
-          <div class="campaign-period">Order 32736 &nbsp;·&nbsp; 1 okt – 31 okt 2026 &nbsp;·&nbsp; v.40–44</div>
-          <div class="products">
-            <div class="product-chip"><span class="label">ROC</span><span class="amount">164 781 kr</span></div>
-            <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">288 474 kr</span></div>
-            <div class="product-chip"><span class="label">A.E</span><span class="amount">77 710 kr</span></div>
-            <div class="product-chip"><span class="label">Totalt</span><span class="amount">530 965 kr</span></div>
-          </div>
-        </div>
-        <div class="card-actions">
-          <span class="status-badge status-confirmed">Bokad</span>
-          <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1183/b1032c78a2d18906a7b30aaa00bd448f" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-  2         Se rapport
-          </a>
-          <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1183/fb2a7cf37278750c6f86c4212caa8225" target="_blank" style="background:#4a7fc1;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            Se skärmdumpar
-          </a>
-        </div>
-      </div>
-
-      <!-- AON November SE -->
-      <div class="campaign-card">
-        <div>
-          <span class="campaign-type type-aon">Always-On</span>
-          <div class="campaign-name">Elgiganten SE – AON November</div>
-          <div class="campaign-period">Order 32737 &nbsp;·&nbsp; 1 nov – 17 nov 2026 &nbsp;·&nbsp; v.44–47</div>
-          <div class="products">
-            <div class="product-chip"><span class="label">ROC</span><span class="amount">74 483 kr</span></div>
-            <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">130 392 kr</span></div>
-            <div class="product-chip"><span class="label">A.E</span><span class="amount">35 125 kr</span></div>
-            <div class="product-chip"><span class="label">Totalt</span><span class="amount">240 000 kr</span></div>
-          </div>
-        </div>
-        <div class="card-actions">
-          <span class="status-badge status-confirmed">Bokad</span>
-          <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1184/89a6db4b04b973253a295537435b5162" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+</div>
+</div>
+<!-- AON Oktober SE -->
+<div class="campaign-card" data-report-id="1183">
+<div>
+<span class="campaign-type type-aon">Always-On</span>
+<div class="campaign-name">Elgiganten SE – AON Oktober</div>
+<div class="campaign-period">Order 32736  ·  1 okt – 31 okt 2026  ·  v.40–44</div>
+<div class="products">
+<div class="product-chip"><span class="label">ROC</span><span class="amount">164 781 kr</span></div>
+<div class="product-chip"><span class="label">Welcome Page</span><span class="amount">288 474 kr</span></div>
+<div class="product-chip"><span class="label">A.E</span><span class="amount">77 710 kr</span></div>
+<div class="product-chip"><span class="label">Totalt</span><span class="amount">530 965 kr</span></div>
+</div><div class="delivery-section" style="display:none;"><div class="delivery-bars"></div></div>
+</div>
+<div class="card-actions">
+<span class="status-badge status-confirmed">Bokad</span>
+<a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1183/b1032c78a2d18906a7b30aaa00bd448f" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
             Se rapport
           </a>
-          <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1184/531310fb058989cb20096172250d65ee" target="_blank" style="background:#4a7fc1;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+<a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1183/fb2a7cf37278750c6f86c4212caa8225" style="background:#4a7fc1;" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
             Se skärmdumpar
           </a>
-        </div>
-      </div>
-
-      <!-- Black Week SE -->
-      <div class="campaign-card">
-        <div>
-          <span class="campaign-type type-special">Kampanj</span>
-          <div class="campaign-name">Elgiganten SE – Black Week 2026</div>
-          <div class="campaign-period">Order 32605 &nbsp;·&nbsp; 18 nov – 30 nov 2026 &nbsp;·&nbsp; v.47–49</div>
-          <div class="products">
-            <div class="product-chip"><span class="label">ROC</span><span class="amount">285 197 kr</span></div>
-            <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">499 277 kr</span></div>
-            <div class="product-chip"><span class="label">A.E</span><span class="amount">134 496 kr</span></div>
-            <div class="product-chip"><span class="label">Totalt</span><span class="amount">918 970 kr</span></div>
-          </div>
-        </div>
-        <div class="card-actions">
-          <span class="status-badge status-confirmed">Bokad</span>
-          <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1093/99255fd10b5945724da5dc8db50ed338" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+</div>
+</div>
+<!-- AON November SE -->
+<div class="campaign-card" data-report-id="1184">
+<div>
+<span class="campaign-type type-aon">Always-On</span>
+<div class="campaign-name">Elgiganten SE – AON November</div>
+<div class="campaign-period">Order 32737  ·  1 nov – 17 nov 2026  ·  v.44–47</div>
+<div class="products">
+<div class="product-chip"><span class="label">ROC</span><span class="amount">74 483 kr</span></div>
+<div class="product-chip"><span class="label">Welcome Page</span><span class="amount">130 392 kr</span></div>
+<div class="product-chip"><span class="label">A.E</span><span class="amount">35 125 kr</span></div>
+<div class="product-chip"><span class="label">Totalt</span><span class="amount">240 000 kr</span></div>
+</div><div class="delivery-section" style="display:none;"><div class="delivery-bars"></div></div>
+</div>
+<div class="card-actions">
+<span class="status-badge status-confirmed">Bokad</span>
+<a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1184/89a6db4b04b973253a295537435b5162" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
             Se rapport
           </a>
-          <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1093/d1805e50ad24577d6f5dd9e65c34b065" target="_blank" style="background:#4a7fc1;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+<a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1184/531310fb058989cb20096172250d65ee" style="background:#4a7fc1;" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
             Se skärmdumpar
           </a>
-        </div>
-      </div>
-
-      <!-- AON December SE -->
-      <div class="campaign-card">
-        <div>
-          <span class="campaign-type type-aon">Always-On</span>
-          <div class="campaign-name">Elgiganten SE – AON December</div>
-          <div class="campaign-period">Order 32738 &nbsp;·&nbsp; 1 dec – 31 dec 2026 &nbsp;·&nbsp; v.49–53</div>
-          <div class="products">
-            <div class="product-chip"><span class="label">ROC</span><span class="amount">134 068 kr</span></div>
-            <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">234 706 kr</span></div>
-            <div class="product-chip"><span class="label">A.E</span><span class="amount">63 226 kr</span></div>
-            <div class="product-chip"><span class="label">Totalt</span><span class="amount">432 000 kr</span></div>
-          </div>
-        </div>
-        <div class="card-actions">
-          <span class="status-badge status-confirmed">Bokad</span>
-          <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1185/a35fc595e50c4fcd06ddb911bc17acc5" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+</div>
+</div>
+<!-- Black Week SE -->
+<div class="campaign-card" data-report-id="1093">
+<div>
+<span class="campaign-type type-special">Kampanj</span>
+<div class="campaign-name">Elgiganten SE – Black Week 2026</div>
+<div class="campaign-period">Order 32605  ·  18 nov – 30 nov 2026  ·  v.47–49</div>
+<div class="products">
+<div class="product-chip"><span class="label">ROC</span><span class="amount">285 197 kr</span></div>
+<div class="product-chip"><span class="label">Welcome Page</span><span class="amount">499 277 kr</span></div>
+<div class="product-chip"><span class="label">A.E</span><span class="amount">134 496 kr</span></div>
+<div class="product-chip"><span class="label">Totalt</span><span class="amount">918 970 kr</span></div>
+</div><div class="delivery-section" style="display:none;"><div class="delivery-bars"></div></div>
+</div>
+<div class="card-actions">
+<span class="status-badge status-confirmed">Bokad</span>
+<a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1093/99255fd10b5945724da5dc8db50ed338" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
             Se rapport
           </a>
-          <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1185/8f5e341c35690eeb0ece3ed5d168a020" target="_blank" style="background:#4a7fc1;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+<a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1093/d1805e50ad24577d6f5dd9e65c34b065" style="background:#4a7fc1;" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
             Se skärmdumpar
           </a>
-        </div>
-      </div>
-
-      <!-- AON Januari SE -->
-      <div class="campaign-card">
-        <div>
-          <span class="campaign-type type-aon">Always-On</span>
-          <div class="campaign-name">Elgiganten SE – AON Januari 2027</div>
-          <div class="campaign-period">Order 32739 &nbsp;·&nbsp; 1 jan – 31 jan 2027 &nbsp;·&nbsp; v.53–04</div>
-          <div class="products">
-            <div class="product-chip"><span class="label">ROC</span><span class="amount">89 379 kr</span></div>
-            <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">156 470 kr</span></div>
-            <div class="product-chip"><span class="label">A.E</span><span class="amount">42 151 kr</span></div>
-            <div class="product-chip"><span class="label">Totalt</span><span class="amount">288 000 kr</span></div>
-          </div>
-        </div>
-        <div class="card-actions">
-          <span class="status-badge status-confirmed">Bokad</span>
-          <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1186/673e94b2b05e7be4ea524add11ab43f8" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+</div>
+</div>
+<!-- AON December SE -->
+<div class="campaign-card" data-report-id="1185">
+<div>
+<span class="campaign-type type-aon">Always-On</span>
+<div class="campaign-name">Elgiganten SE – AON December</div>
+<div class="campaign-period">Order 32738  ·  1 dec – 31 dec 2026  ·  v.49–53</div>
+<div class="products">
+<div class="product-chip"><span class="label">ROC</span><span class="amount">134 068 kr</span></div>
+<div class="product-chip"><span class="label">Welcome Page</span><span class="amount">234 706 kr</span></div>
+<div class="product-chip"><span class="label">A.E</span><span class="amount">63 226 kr</span></div>
+<div class="product-chip"><span class="label">Totalt</span><span class="amount">432 000 kr</span></div>
+</div><div class="delivery-section" style="display:none;"><div class="delivery-bars"></div></div>
+</div>
+<div class="card-actions">
+<span class="status-badge status-confirmed">Bokad</span>
+<a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1185/a35fc595e50c4fcd06ddb911bc17acc5" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
             Se rapport
           </a>
-          <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1186/7dfda418f0ac3cbf0b616ebee6f074d0" target="_blank" style="background:#4a7fc1;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+<a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1185/8f5e341c35690eeb0ece3ed5d168a020" style="background:#4a7fc1;" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
             Se skärmdumpar
           </a>
-        </div>
-      </div>
-
-      <!-- AON Februari SE -->
-      <div class="campaign-card">
-        <div>
-          <span class="campaign-type type-aon">Always-On</span>
-          <div class="campaign-name">Elgiganten SE – AON Februari 2027</div>
-          <div class="campaign-period">Order 32740 &nbsp;·&nbsp; 1 feb – 28 feb 2027 &nbsp;·&nbsp; v.05–08</div>
-          <div class="products">
-            <div class="product-chip"><span class="label">ROC</span><span class="amount">74 483 kr</span></div>
-            <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">130 392 kr</span></div>
-            <div class="product-chip"><span class="label">A.E</span><span class="amount">35 125 kr</span></div>
-            <div class="product-chip"><span class="label">Totalt</span><span class="amount">240 000 kr</span></div>
-          </div>
-        </div>
-        <div class="card-actions">
-          <span class="status-badge status-confirmed">Bokad</span>
-          <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1187/716daf04a86947e4982106727514b41e" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+</div>
+</div>
+<!-- AON Januari SE -->
+<div class="campaign-card" data-report-id="1186">
+<div>
+<span class="campaign-type type-aon">Always-On</span>
+<div class="campaign-name">Elgiganten SE – AON Januari 2027</div>
+<div class="campaign-period">Order 32739  ·  1 jan – 31 jan 2027  ·  v.53–04</div>
+<div class="products">
+<div class="product-chip"><span class="label">ROC</span><span class="amount">89 379 kr</span></div>
+<div class="product-chip"><span class="label">Welcome Page</span><span class="amount">156 470 kr</span></div>
+<div class="product-chip"><span class="label">A.E</span><span class="amount">42 151 kr</span></div>
+<div class="product-chip"><span class="label">Totalt</span><span class="amount">288 000 kr</span></div>
+</div><div class="delivery-section" style="display:none;"><div class="delivery-bars"></div></div>
+</div>
+<div class="card-actions">
+<span class="status-badge status-confirmed">Bokad</span>
+<a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1186/673e94b2b05e7be4ea524add11ab43f8" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
             Se rapport
           </a>
-          <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1187/1e37d9a2cb041a18d9a5d86db031d222" target="_blank" style="background:#4a7fc1;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+<a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1186/7dfda418f0ac3cbf0b616ebee6f074d0" style="background:#4a7fc1;" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
             Se skärmdumpar
           </a>
-        </div>
-      </div>
-
-      <!-- AON Mars SE -->
-      <div class="campaign-card">
-        <div>
-          <span class="campaign-type type-aon">Always-On</span>
-          <div class="campaign-name">Elgiganten SE – AON Mars 2027</div>
-          <div class="campaign-period">Order 32741 &nbsp;·&nbsp; 1 mars – 31 mars 2027 &nbsp;·&nbsp; v.09–13</div>
-          <div class="products">
-            <div class="product-chip"><span class="label">ROC</span><span class="amount">74 483 kr</span></div>
-            <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">130 392 kr</span></div>
-            <div class="product-chip"><span class="label">A.E</span><span class="amount">35 125 kr</span></div>
-            <div class="product-chip"><span class="label">Totalt</span><span class="amount">240 000 kr</span></div>
-          </div>
-        </div>
-        <div class="card-actions">
-          <span class="status-badge status-confirmed">Bokad</span>
-          <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1188/8902ec6b2fcef5949ccf708953ec0c7e" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+</div>
+</div>
+<!-- AON Februari SE -->
+<div class="campaign-card" data-report-id="1187">
+<div>
+<span class="campaign-type type-aon">Always-On</span>
+<div class="campaign-name">Elgiganten SE – AON Februari 2027</div>
+<div class="campaign-period">Order 32740  ·  1 feb – 28 feb 2027  ·  v.05–08</div>
+<div class="products">
+<div class="product-chip"><span class="label">ROC</span><span class="amount">74 483 kr</span></div>
+<div class="product-chip"><span class="label">Welcome Page</span><span class="amount">130 392 kr</span></div>
+<div class="product-chip"><span class="label">A.E</span><span class="amount">35 125 kr</span></div>
+<div class="product-chip"><span class="label">Totalt</span><span class="amount">240 000 kr</span></div>
+</div><div class="delivery-section" style="display:none;"><div class="delivery-bars"></div></div>
+</div>
+<div class="card-actions">
+<span class="status-badge status-confirmed">Bokad</span>
+<a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1187/716daf04a86947e4982106727514b41e" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
             Se rapport
           </a>
-          <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1188/7972ea33c086d916ef05621a92154d52" target="_blank" style="background:#4a7fc1;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+<a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1187/1e37d9a2cb041a18d9a5d86db031d222" style="background:#4a7fc1;" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
             Se skärmdumpar
           </a>
-        </div>
-      </div>
-
-      <!-- AON April SE -->
-      <div class="campaign-card">
-        <div>
-          <span class="campaign-type type-aon">Always-On</span>
-          <div class="campaign-name">Elgiganten SE – AON April 2027</div>
-          <div class="campaign-period">Order 32742 &nbsp;·&nbsp; 1 apr – 30 apr 2027 &nbsp;·&nbsp; v.13–17</div>
-          <div class="products">
-            <div class="product-chip"><span class="label">ROC</span><span class="amount">59 586 kr</span></div>
-            <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">104 314 kr</span></div>
-            <div class="product-chip"><span class="label">A.E</span><span class="amount">28 100 kr</span></div>
-            <div class="product-chip"><span class="label">Totalt</span><span class="amount">192 000 kr</span></div>
-          </div>
-        </div>
-        <div class="card-actions">
-          <span class="status-badge status-confirmed">Bokad</span>
-          <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1189/4b04da17581e2fcbc8f122bbcf28b82c" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+</div>
+</div>
+<!-- AON Mars SE -->
+<div class="campaign-card" data-report-id="1188">
+<div>
+<span class="campaign-type type-aon">Always-On</span>
+<div class="campaign-name">Elgiganten SE – AON Mars 2027</div>
+<div class="campaign-period">Order 32741  ·  1 mars – 31 mars 2027  ·  v.09–13</div>
+<div class="products">
+<div class="product-chip"><span class="label">ROC</span><span class="amount">74 483 kr</span></div>
+<div class="product-chip"><span class="label">Welcome Page</span><span class="amount">130 392 kr</span></div>
+<div class="product-chip"><span class="label">A.E</span><span class="amount">35 125 kr</span></div>
+<div class="product-chip"><span class="label">Totalt</span><span class="amount">240 000 kr</span></div>
+</div><div class="delivery-section" style="display:none;"><div class="delivery-bars"></div></div>
+</div>
+<div class="card-actions">
+<span class="status-badge status-confirmed">Bokad</span>
+<a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1188/8902ec6b2fcef5949ccf708953ec0c7e" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
             Se rapport
           </a>
-          <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1189/868dcecb746160b230a80d4a765931f0" target="_blank" style="background:#4a7fc1;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+<a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1188/7972ea33c086d916ef05621a92154d52" style="background:#4a7fc1;" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
             Se skärmdumpar
           </a>
-        </div>
-      </div>
-
-    </div>
-    <div class="total-row">
-      <span class="total-label">Total Sverige (Juli 2026 – April 2027)</span>
-      <div class="total-amounts">
-        <div class="total-item">
-          <div class="t-label">Always-On budget</div>
-          <div class="t-value">3 748 176 kr</div>
-        </div>
-      </div>
-    </div>
-    </div>
-
-    <!-- PM SUB-SECTION -->
-    <div id="subtab-se-pm" class="sub-section" style="display:none;">
-      <div class="campaign-grid">
-        <div class="campaign-card" style="border-style: dashed; background: #fafbfc;">
-          <div>
-            <span class="campaign-type type-pm">PM</span>
-            <div class="campaign-name" style="color:#999;">Kommande PM-kampanjer</div>
-            <div class="campaign-period">Läggs till allt eftersom bokningar bekräftas</div>
-          </div>
-          <div class="card-actions">
-            <span class="status-badge status-planned">Planerad</span>
-          </div>
-        </div>
-      </div>
-      <div class="total-row">
-        <span class="total-label">Total Sverige (Juli 2026 – April 2027)</span>
-        <div class="total-amounts">
-          <div class="total-item">
-            <div class="t-label">Partner Marketing Budget</div>
-            <div class="t-value">–</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════════ NORGE ═══════════ -->
-  <div id="tab-no" class="tab-content">
-
-    <div class="tab-nav" style="margin-bottom: 20px;">
-      <button class="tab-btn active" onclick="showSubTab('subtab-no-aon', this)">AON – Always-On</button>
-      <button class="tab-btn" onclick="showSubTab('subtab-no-pm', this)">PM – Partner Marketing</button>
-    </div>
-
-    <!-- AON SUB-SECTION -->
-    <div id="subtab-no-aon" class="sub-section">
-      <div class="campaign-grid">
-
-        <!-- AON Juni NO -->
-        <div class="campaign-card">
-          <div>
-            <span class="campaign-type type-aon">Always-On</span>
-            <div class="campaign-name">Elkjøp NO – AON Juni</div>
-            <div class="campaign-period">Order 32685 &nbsp;·&nbsp; 17 juni – 30 juni 2026 &nbsp;·&nbsp; v.25–27</div>
-            <div class="products">
-              <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">117 500 NOK</span></div>
-              <div class="product-chip"><span class="label">ROC</span><span class="amount">23 500 NOK</span></div>
-              <div class="product-chip"><span class="label">Totalt</span><span class="amount">141 000 NOK</span></div>
-            </div>
-          </div>
-          <div class="card-actions">
-            <span class="status-badge status-live">Live nu</span>
-            <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1175/bc8cd543dba15b0c206ac1087a6c1ab4?reportingPeriod%5B1%5D=duration" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+</div>
+</div>
+<!-- AON April SE -->
+<div class="campaign-card" data-report-id="1189">
+<div>
+<span class="campaign-type type-aon">Always-On</span>
+<div class="campaign-name">Elgiganten SE – AON April 2027</div>
+<div class="campaign-period">Order 32742  ·  1 apr – 30 apr 2027  ·  v.13–17</div>
+<div class="products">
+<div class="product-chip"><span class="label">ROC</span><span class="amount">59 586 kr</span></div>
+<div class="product-chip"><span class="label">Welcome Page</span><span class="amount">104 314 kr</span></div>
+<div class="product-chip"><span class="label">A.E</span><span class="amount">28 100 kr</span></div>
+<div class="product-chip"><span class="label">Totalt</span><span class="amount">192 000 kr</span></div>
+</div><div class="delivery-section" style="display:none;"><div class="delivery-bars"></div></div>
+</div>
+<div class="card-actions">
+<span class="status-badge status-confirmed">Bokad</span>
+<a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1189/4b04da17581e2fcbc8f122bbcf28b82c" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+            Se rapport
+          </a>
+<a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1189/868dcecb746160b230a80d4a765931f0" style="background:#4a7fc1;" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            Se skärmdumpar
+          </a>
+</div>
+</div>
+</div>
+<div class="total-row">
+<span class="total-label">Total Sverige (Juli 2026 – April 2027)</span>
+<div class="total-amounts">
+<div class="total-item">
+<div class="t-label">Always-On budget</div>
+<div class="t-value">3 748 176 kr</div>
+</div>
+</div>
+</div>
+</div>
+<!-- PM SUB-SECTION -->
+<div class="sub-section" id="subtab-se-pm" style="display:none;">
+<div class="campaign-grid">
+<div class="campaign-card" style="border-style: dashed; background: #fafbfc;">
+<div>
+<span class="campaign-type type-pm">PM</span>
+<div class="campaign-name" style="color:#999;">Kommande PM-kampanjer</div>
+<div class="campaign-period">Läggs till allt eftersom bokningar bekräftas</div>
+</div>
+<div class="card-actions">
+<span class="status-badge status-planned">Planerad</span>
+</div>
+</div>
+</div>
+<div class="total-row">
+<span class="total-label">Total Sverige (Juli 2026 – April 2027)</span>
+<div class="total-amounts">
+<div class="total-item">
+<div class="t-label">Partner Marketing Budget</div>
+<div class="t-value">–</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sub-section" id="subtab-se-under" style="display:none;">
+<div class="under-loading" id="under-se-content">Laddar leveransdata…</div>
+</div>
+</div>
+<!-- ═══════════ NORGE ═══════════ -->
+<div class="tab-content" id="tab-no">
+<div class="tab-nav" style="margin-bottom: 20px;">
+<button class="tab-btn active" onclick="showSubTab('subtab-no-aon', this)">AON – Always-On</button>
+<button class="tab-btn" onclick="showSubTab('subtab-no-pm', this)">PM – Partner Marketing</button>
+<button class="tab-btn" onclick="showSubTab('subtab-no-under', this)">Underleverans</button></div>
+<!-- AON SUB-SECTION -->
+<div class="sub-section" id="subtab-no-aon">
+<div class="campaign-grid">
+<!-- AON Juni NO -->
+<div class="campaign-card" data-report-id="1175">
+<div>
+<span class="campaign-type type-aon">Always-On</span>
+<div class="campaign-name">Elkjøp NO – AON Juni</div>
+<div class="campaign-period">Order 32685  ·  17 juni – 30 juni 2026  ·  v.25–27</div>
+<div class="products">
+<div class="product-chip"><span class="label">Welcome Page</span><span class="amount">117 500 NOK</span></div>
+<div class="product-chip"><span class="label">ROC</span><span class="amount">23 500 NOK</span></div>
+<div class="product-chip"><span class="label">Totalt</span><span class="amount">141 000 NOK</span></div>
+</div><div class="delivery-section" style="display:none;"><div class="delivery-bars"></div></div>
+</div>
+<div class="card-actions">
+<span class="status-badge status-live">Live nu</span>
+<a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1175/bc8cd543dba15b0c206ac1087a6c1ab4?reportingPeriod%5B1%5D=duration" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
               Se rapport
             </a>
-            <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1175/8c6593807781613e09eda60986f8de9e" target="_blank" style="background:#4a7fc1;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+<a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1175/8c6593807781613e09eda60986f8de9e" style="background:#4a7fc1;" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
               Se skärmdumpar
             </a>
-          </div>
-        </div>
-
-        <!-- AON Juli NO -->
-        <div class="campaign-card">
-          <div>
-            <span class="campaign-type type-aon">Always-On</span>
-            <div class="campaign-name">Elkjøp NO – AON Juli 2026</div>
-            <div class="campaign-period">Order 32724 &nbsp;·&nbsp; 1 jul – 31 jul 2026 &nbsp;·&nbsp; v.27–31</div>
-            <div class="products">
-              <div class="product-chip"><span class="label">ROC</span><span class="amount">84 600 NOK</span></div>
-              <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">56 400 NOK</span></div>
-              <div class="product-chip"><span class="label">Totalt</span><span class="amount">141 000 NOK</span></div>
-            </div>
-          </div>
-          <div class="card-actions">
-            <span class="status-badge status-confirmed">Bokad</span>
-            <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1190/d6939225eb363f8b9a15abb36528a9fa" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+</div>
+</div>
+<!-- AON Juli NO -->
+<div class="campaign-card" data-report-id="1190">
+<div>
+<span class="campaign-type type-aon">Always-On</span>
+<div class="campaign-name">Elkjøp NO – AON Juli 2026</div>
+<div class="campaign-period">Order 32724  ·  1 jul – 31 jul 2026  ·  v.27–31</div>
+<div class="products">
+<div class="product-chip"><span class="label">ROC</span><span class="amount">84 600 NOK</span></div>
+<div class="product-chip"><span class="label">Welcome Page</span><span class="amount">56 400 NOK</span></div>
+<div class="product-chip"><span class="label">Totalt</span><span class="amount">141 000 NOK</span></div>
+</div><div class="delivery-section" style="display:none;"><div class="delivery-bars"></div></div>
+</div>
+<div class="card-actions">
+<span class="status-badge status-confirmed">Bokad</span>
+<a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1190/d6939225eb363f8b9a15abb36528a9fa" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
               Se rapport
             </a>
-            <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1190/ed343772eba164579ea5f9b965433f98" target="_blank" style="background:#4a7fc1;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+<a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1190/ed343772eba164579ea5f9b965433f98" style="background:#4a7fc1;" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
               Se skärmdumpar
             </a>
-          </div>
-        </div>
-
-        <!-- AON Aug NO -->
-        <div class="campaign-card">
-          <div>
-            <span class="campaign-type type-aon">Always-On</span>
-            <div class="campaign-name">Elkjøp NO – AON Aug 2026</div>
-            <div class="campaign-period">Order 32743 &nbsp;·&nbsp; 1 aug – 31 aug 2026 &nbsp;·&nbsp; v.31–36</div>
-            <div class="products">
-              <div class="product-chip"><span class="label">ROC</span><span class="amount">84 600 NOK</span></div>
-              <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">56 400 NOK</span></div>
-              <div class="product-chip"><span class="label">Totalt</span><span class="amount">141 000 NOK</span></div>
-            </div>
-          </div>
-          <div class="card-actions">
-            <span class="status-badge status-confirmed">Bokad</span>
-            <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1191/6d60ef49935cf118f24b95f3ca7adc25" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+</div>
+</div>
+<!-- AON Aug NO -->
+<div class="campaign-card" data-report-id="1191">
+<div>
+<span class="campaign-type type-aon">Always-On</span>
+<div class="campaign-name">Elkjøp NO – AON Aug 2026</div>
+<div class="campaign-period">Order 32743  ·  1 aug – 31 aug 2026  ·  v.31–36</div>
+<div class="products">
+<div class="product-chip"><span class="label">ROC</span><span class="amount">84 600 NOK</span></div>
+<div class="product-chip"><span class="label">Welcome Page</span><span class="amount">56 400 NOK</span></div>
+<div class="product-chip"><span class="label">Totalt</span><span class="amount">141 000 NOK</span></div>
+</div><div class="delivery-section" style="display:none;"><div class="delivery-bars"></div></div>
+</div>
+<div class="card-actions">
+<span class="status-badge status-confirmed">Bokad</span>
+<a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1191/6d60ef49935cf118f24b95f3ca7adc25" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
               Se rapport
             </a>
-            <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1191/df789e403b03f2c557229d4630c8d23b" target="_blank" style="background:#4a7fc1;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+<a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1191/df789e403b03f2c557229d4630c8d23b" style="background:#4a7fc1;" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
               Se skärmdumpar
             </a>
-          </div>
-        </div>
-
-        <!-- AON Sep NO -->
-        <div class="campaign-card">
-          <div>
-            <span class="campaign-type type-aon">Always-On</span>
-            <div class="campaign-name">Elkjøp NO – AON Sep 2026</div>
-            <div class="campaign-period">Order 32744 &nbsp;·&nbsp; 1 sep – 30 sep 2026 &nbsp;·&nbsp; v.36–40</div>
-            <div class="products">
-              <div class="product-chip"><span class="label">ROC</span><span class="amount">84 600 NOK</span></div>
-              <div class="product-chip"><span class="label">Welcome Page</span><span class="amount">56 400 NOK</span></div>
-              <div class="product-chip"><span class="label">Totalt</span><span class="amount">141 000 NOK</span></div>
-            </div>
-          </div>
-          <div class="card-actions">
-            <span class="status-badge status-confirmed">Bokad</span>
-  2         <a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1192/6df5df0e131de1400471fe7a41e31355" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+</div>
+</div>
+<!-- AON Sep NO -->
+<div class="campaign-card" data-report-id="1192">
+<div>
+<span class="campaign-type type-aon">Always-On</span>
+<div class="campaign-name">Elkjøp NO – AON Sep 2026</div>
+<div class="campaign-period">Order 32744  ·  1 sep – 30 sep 2026  ·  v.36–40</div>
+<div class="products">
+<div class="product-chip"><span class="label">ROC</span><span class="amount">84 600 NOK</span></div>
+<div class="product-chip"><span class="label">Welcome Page</span><span class="amount">56 400 NOK</span></div>
+<div class="product-chip"><span class="label">Totalt</span><span class="amount">141 000 NOK</span></div>
+</div><div class="delivery-section" style="display:none;"><div class="delivery-bars"></div></div>
+</div>
+<div class="card-actions">
+<span class="status-badge status-confirmed">Bokad</span>
+<a class="btn-report" href="https://prisjakt.gotom.io/reporting-task-report/1192/6df5df0e131de1400471fe7a41e31355" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
               Se rapport
             </a>
-            <a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1192/a0728019ebcd59eeea2ead5747ceb98e" target="_blank" style="background:#4a7fc1;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+<a class="btn-report" href="https://prisjakt.gotom.io/screenshot-document/show/1192/a0728019ebcd59eeea2ead5747ceb98e" style="background:#4a7fc1;" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
               Se skärmdumpar
             </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- PM SUB-SECTION -->
-    <div id="subtab-no-pm" class="sub-section" style="display:none;">
-      <div class="campaign-grid">
-        <div class="campaign-card" style="border-style: dashed; background: #fafbfc;">
-          <div>
-            <span class="campaign-type type-pm">PM</span>
-            <div class="campaign-name" style="color:#999;">Kommande PM-kampanjer</div>
-            <div class="campaign-period">Läggs till allt eftersom bokningar bekräftas</div>
-          </div>
-          <div class="card-actions">
-            <span class="status-badge status-planned">Planerad</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
+</div>
+</div>
+</div>
+</div>
+<!-- PM SUB-SECTION -->
+<div class="sub-section" id="subtab-no-pm" style="display:none;">
+<div class="campaign-grid">
+<div class="campaign-card" style="border-style: dashed; background: #fafbfc;">
+<div>
+<span class="campaign-type type-pm">PM</span>
+<div class="campaign-name" style="color:#999;">Kommande PM-kampanjer</div>
+<div class="campaign-period">Läggs till allt eftersom bokningar bekräftas</div>
+</div>
+<div class="card-actions">
+<span class="status-badge status-planned">Planerad</span>
+</div>
+</div>
+</div>
+</div>
+<div class="sub-section" id="subtab-no-under" style="display:none;">
+<div class="under-loading" id="under-no-content">Laddar leveransdata…</div>
+</div>
+</div>
 </main>
-
 <footer>
-  Prisjakt &nbsp;·&nbsp; Powered by Gotom &nbsp;·&nbsp; Rapporthubben uppdateras löpande vartefter kampanjer bokas in.
+  Prisjakt  ·  Powered by Gotom  ·  Rapporthubben uppdateras löpande vartefter kampanjer bokas in.
 </footer>
-
 <script>
   function showTab(id, btn) {
     document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
@@ -768,7 +831,143 @@
     nav.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
     btn.classList.add('active');
   }
-</script>
 
+  // ── Delivery data ──────────────────────────────────────────────────────────
+  let _delivery = {};
+
+  async function loadDelivery() {
+    try {
+      const resp = await fetch('delivery.json?v=' + Date.now());
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      const data = await resp.json();
+      _delivery = data.campaigns || {};
+      applyDeliveryToCards();
+      buildUnderTab('se', 'under-se-content');
+      buildUnderTab('no', 'under-no-content');
+    } catch (e) {
+      console.warn('Could not load delivery.json:', e);
+      document.getElementById('under-se-content').textContent = 'Kunde inte ladda leveransdata.';
+      document.getElementById('under-no-content').textContent = 'Kunde inte ladda leveransdata.';
+    }
+  }
+
+  function deliveryClass(pct) {
+    if (pct === null || pct === undefined) return 'warn';
+    if (pct >= 95) return 'good';
+    if (pct >= 75) return 'warn';
+    return 'bad';
+  }
+
+  function applyDeliveryToCards() {
+    document.querySelectorAll('[data-report-id]').forEach(card => {
+      const id = card.dataset.reportId;
+      const data = _delivery[id];
+      if (!data || !data.products || Object.keys(data.products).length === 0) return;
+
+      const section = card.querySelector('.delivery-section');
+      if (!section) return;
+      section.style.display = 'block';
+
+      const barsEl = section.querySelector('.delivery-bars');
+      barsEl.innerHTML = '';
+      Object.entries(data.products).forEach(([prod, d]) => {
+        const pct = d.pct;
+        if (pct === null || pct === undefined) return; // not started yet
+        const cls = deliveryClass(pct);
+        const width = Math.min(Math.max(pct, 0), 100);
+        barsEl.innerHTML += `
+          <div class="delivery-bar">
+            <span class="delivery-prod-name">${prod}</span>
+            <div class="delivery-track"><div class="delivery-fill ${cls}" style="width:${width}%"></div></div>
+            <span class="delivery-pct ${cls}">${pct.toFixed(1)}%</span>
+          </div>`;
+      });
+    });
+  }
+
+  function buildUnderTab(market, contentId) {
+    const el = document.getElementById(contentId);
+    if (!el) return;
+
+    const tabEl = document.getElementById('tab-' + market);
+    if (!tabEl) return;
+
+    // Gather campaigns with underleverans in this market
+    const under = [];
+    tabEl.querySelectorAll('[data-report-id]').forEach(card => {
+      const id = card.dataset.reportId;
+      const d = _delivery[id];
+      if (!d || !d.products || Object.keys(d.products).length === 0) return;
+
+      // Only include if at least one product has pct < 95 and is not null
+      const prods = d.products;
+      const hasUnder = Object.values(prods).some(p => p.pct !== null && p.pct < 95);
+      if (!hasUnder) return;
+
+      const nameEl = card.querySelector('.campaign-name');
+      const periodEl = card.querySelector('.campaign-period');
+      under.push({
+        id,
+        name: nameEl ? nameEl.textContent.trim() : d.name,
+        period: periodEl ? periodEl.textContent.trim() : '',
+        products: prods,
+      });
+    });
+
+    if (under.length === 0) {
+      el.className = 'under-empty';
+      el.innerHTML = '✓ Inga kampanjer med underleverans';
+      return;
+    }
+
+    el.className = '';
+    const currency = market === 'se' ? 'kr' : 'NOK';
+
+    let html = '<div class="under-grid">';
+    under.forEach(c => {
+      let totalBooked = 0, totalDelivered = 0;
+      let prodRows = '';
+      Object.entries(c.products).forEach(([prod, p]) => {
+        if (p.pct === null || p.pct === undefined) return;
+        totalBooked    += p.booked;
+        totalDelivered += p.delivered;
+        const diff = p.delivered - p.booked;
+        const cls = deliveryClass(p.pct);
+        const width = Math.min(Math.max(p.pct, 0), 100);
+        prodRows += `
+          <div class="under-prod-row">
+            <span class="under-prod-name">${prod}</span>
+            <div class="delivery-track" style="flex:1"><div class="delivery-fill ${cls}" style="width:${width}%"></div></div>
+            <span class="delivery-pct ${cls}" style="min-width:42px">${p.pct.toFixed(1)}%</span>
+            <span class="under-diff">${fmtDiff(diff, currency)}</span>
+          </div>`;
+      });
+
+      const totalDiff  = totalDelivered - totalBooked;
+      const totalCls   = totalDiff >= 0 ? 'good' : 'bad';
+      html += `
+        <div class="under-card">
+          <div class="under-card-header">
+            <div class="campaign-name">${c.name}</div>
+            <div class="campaign-period" style="margin-top:2px">${c.period}</div>
+          </div>
+          ${prodRows}
+          <div class="under-total">
+            <span class="under-total-label">Total avvikelse</span>
+            <span class="under-total-value ${totalCls}">${fmtDiff(totalDiff, currency)}</span>
+          </div>
+        </div>`;
+    });
+    html += '</div>';
+    el.innerHTML = html;
+  }
+
+  function fmtDiff(val, currency) {
+    const sign = val >= 0 ? '+' : '';
+    return sign + Math.round(val).toLocaleString('sv-SE') + ' ' + currency;
+  }
+
+  loadDelivery();
+</script>
 </body>
 </html>
