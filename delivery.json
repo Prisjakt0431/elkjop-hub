@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-24T19:41:39Z",
+  "updated": "2026-06-24T19:55:25Z",
   "campaigns": {
     "1176": {
       "name": "Elgiganten SE – AON Juni",
@@ -8,12 +8,12 @@
         "ROC": {
           "booked": 33408.0,
           "delivered": 18396.37,
-          "pct": null
+          "pct": 55.1
         },
         "Welcome Page": {
           "booked": 110592.0,
           "delivered": 64128.1,
-          "pct": null
+          "pct": 58.0
         }
       }
     },
@@ -255,12 +255,12 @@
         "Welcome Page": {
           "booked": 117499.81,
           "delivered": 44262.72,
-          "pct": null
+          "pct": 37.7
         },
         "ROC": {
           "booked": 23499.98,
           "delivered": 14238.82,
-          "pct": null
+          "pct": 60.6
         }
       }
     },
