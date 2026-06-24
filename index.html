@@ -538,10 +538,10 @@
 <div class="campaign-name">Elgiganten SE – AON December</div>
 <div class="campaign-period">Order 32738  ·  1 dec – 31 dec 2026  ·  v.49–53</div>
 <div class="products">
-<div class="product-chip"><span class="label">ROC</span><span class="amount">134 068 kr</span></div>
-<div class="product-chip"><span class="label">Welcome Page</span><span class="amount">234 706 kr</span></div>
+<div class="product-chip"><span class="label">ROC</span><span class="amount">134 648 kr</span></div>
+<div class="product-chip"><span class="label">Welcome Page</span><span class="amount">235 706 kr</span></div>
 <div class="product-chip"><span class="label">A.E</span><span class="amount">63 226 kr</span></div>
-<div class="product-chip"><span class="label">Totalt</span><span class="amount">432 000 kr</span></div>
+<div class="product-chip"><span class="label">Totalt</span><span class="amount">433 580 kr</span></div>
 </div><div class="delivery-section" style="display:none;"><div class="delivery-bars"></div></div>
 </div>
 <div class="card-actions">
@@ -912,9 +912,9 @@
       // Skip campaigns that are still live (not yet finished)
       if (card.querySelector('.status-live')) return;
 
-      // Only include if at least one product has pct < 95 and is not null
+      // Only include if at least one product has pct < 100 and is not null
       const prods = d.products;
-      const hasUnder = Object.values(prods).some(p => p.pct !== null && p.pct < 95);
+      const hasUnder = Object.values(prods).some(p => p.pct !== null && p.pct < 100);
       if (!hasUnder) return;
 
       const nameEl = card.querySelector('.campaign-name');
