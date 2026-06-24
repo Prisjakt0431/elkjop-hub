@@ -1,4 +1,331 @@
 {
-  "updated": "2026-06-23T07:00:00Z",
-  "campaigns": {}
+  "updated": "2026-06-24T19:41:39Z",
+  "campaigns": {
+    "1176": {
+      "name": "Elgiganten SE – AON Juni",
+      "market": "se",
+      "products": {
+        "ROC": {
+          "booked": 33408.0,
+          "delivered": 18396.37,
+          "pct": null
+        },
+        "Welcome Page": {
+          "booked": 110592.0,
+          "delivered": 64128.1,
+          "pct": null
+        }
+      }
+    },
+    "1180": {
+      "name": "Elgiganten SE – AON Juli",
+      "market": "se",
+      "products": {
+        "A.E": {
+          "booked": 21075.84,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "ROC": {
+          "booked": 44688.9,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "Welcome Page": {
+          "booked": 78235.2,
+          "delivered": 0.0,
+          "pct": null
+        }
+      }
+    },
+    "1181": {
+      "name": "Elgiganten SE – AON Augusti",
+      "market": "se",
+      "products": {
+        "A.E": {
+          "booked": 28100.12,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "ROC": {
+          "booked": 59586.22,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "Welcome Page": {
+          "booked": 104313.6,
+          "delivered": 0.0,
+          "pct": null
+        }
+      }
+    },
+    "1182": {
+      "name": "Elgiganten SE – AON September",
+      "market": "se",
+      "products": {
+        "A.E": {
+          "booked": 28100.12,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "ROC": {
+          "booked": 59586.22,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "Welcome Page": {
+          "booked": 104313.6,
+          "delivered": 0.0,
+          "pct": null
+        }
+      }
+    },
+    "1183": {
+      "name": "Elgiganten SE – AON Oktober",
+      "market": "se",
+      "products": {
+        "A.E": {
+          "booked": 77710.05,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "ROC": {
+          "booked": 164781.06,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "Welcome Page": {
+          "booked": 288474.05,
+          "delivered": 0.0,
+          "pct": null
+        }
+      }
+    },
+    "1184": {
+      "name": "Elgiganten SE – AON November",
+      "market": "se",
+      "products": {
+        "A.E": {
+          "booked": 35125.42,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "ROC": {
+          "booked": 74482.51,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "Welcome Page": {
+          "booked": 130392.0,
+          "delivered": 0.0,
+          "pct": null
+        }
+      }
+    },
+    "1093": {
+      "name": "Elgiganten SE – Black Week 2026",
+      "market": "se",
+      "products": {
+        "A.E": {
+          "booked": 134495.99,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "ROC": {
+          "booked": 285196.75,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "Welcome Page": {
+          "booked": 499277.38,
+          "delivered": 0.0,
+          "pct": null
+        }
+      }
+    },
+    "1185": {
+      "name": "Elgiganten SE – AON December",
+      "market": "se",
+      "products": {
+        "A.E": {
+          "booked": 63226.49,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "ROC": {
+          "booked": 134067.78,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "Welcome Page": {
+          "booked": 234705.6,
+          "delivered": 0.0,
+          "pct": null
+        }
+      }
+    },
+    "1186": {
+      "name": "Elgiganten SE – AON Januari 2027",
+      "market": "se",
+      "products": {
+        "A.E": {
+          "booked": 42150.65,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "ROC": {
+          "booked": 89378.81,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "Welcome Page": {
+          "booked": 156470.4,
+          "delivered": 0.0,
+          "pct": null
+        }
+      }
+    },
+    "1187": {
+      "name": "Elgiganten SE – AON Februari 2027",
+      "market": "se",
+      "products": {
+        "A.E": {
+          "booked": 35125.42,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "ROC": {
+          "booked": 74482.51,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "Welcome Page": {
+          "booked": 130392.0,
+          "delivered": 0.0,
+          "pct": null
+        }
+      }
+    },
+    "1188": {
+      "name": "Elgiganten SE – AON Mars 2027",
+      "market": "se",
+      "products": {
+        "A.E": {
+          "booked": 35125.42,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "ROC": {
+          "booked": 74482.51,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "Welcome Page": {
+          "booked": 130392.0,
+          "delivered": 0.0,
+          "pct": null
+        }
+      }
+    },
+    "1189": {
+      "name": "Elgiganten SE – AON April 2027",
+      "market": "se",
+      "products": {
+        "A.E": {
+          "booked": 28100.12,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "ROC": {
+          "booked": 59586.22,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "Welcome Page": {
+          "booked": 104313.6,
+          "delivered": 0.0,
+          "pct": null
+        }
+      }
+    },
+    "1175": {
+      "name": "Elkjøp NO – AON Juni",
+      "market": "no",
+      "products": {
+        "Welcome Page": {
+          "booked": 117499.81,
+          "delivered": 44262.72,
+          "pct": null
+        },
+        "ROC": {
+          "booked": 23499.98,
+          "delivered": 14238.82,
+          "pct": null
+        }
+      }
+    },
+    "1190": {
+      "name": "Elkjøp NO – AON Juli 2026",
+      "market": "no",
+      "products": {
+        "Welcome Page": {
+          "booked": 56400.0,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "ROC": {
+          "booked": 84599.96,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "A.E": {
+          "booked": 0.0,
+          "delivered": 0.0,
+          "pct": null
+        }
+      }
+    },
+    "1191": {
+      "name": "Elkjøp NO – AON Aug 2026",
+      "market": "no",
+      "products": {
+        "Welcome Page": {
+          "booked": 56400.0,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "ROC": {
+          "booked": 84599.96,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "A.E": {
+          "booked": 0.0,
+          "delivered": 0.0,
+          "pct": null
+        }
+      }
+    },
+    "1192": {
+      "name": "Elkjøp NO – AON Sep 2026",
+      "market": "no",
+      "products": {
+        "Welcome Page": {
+          "booked": 56400.0,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "ROC": {
+          "booked": 84599.96,
+          "delivered": 0.0,
+          "pct": null
+        },
+        "A.E": {
+          "booked": 0.0,
+          "delivered": 0.0,
+          "pct": null
+        }
+      }
+    }
+  }
 }
