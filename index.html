@@ -319,6 +319,21 @@
       padding: 48px 0;
       font-size: 15px;
     }
+    .export-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 16px;
+      padding: 7px 14px;
+      background: #fff;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #374151;
+      cursor: pointer;
+    }
+    .export-btn:hover { background: #f3f4f6; }
     .under-loading {
       text-align: center;
       color: #bbb;
@@ -538,10 +553,10 @@
 <div class="campaign-name">Elgiganten SE – AON December</div>
 <div class="campaign-period">Order 32738  ·  1 dec – 31 dec 2026  ·  v.49–53</div>
 <div class="products">
-<div class="product-chip"><span class="label">ROC</span><span class="amount">134 648 kr</span></div>
-<div class="product-chip"><span class="label">Welcome Page</span><span class="amount">235 706 kr</span></div>
+<div class="product-chip"><span class="label">ROC</span><span class="amount">134 068 kr</span></div>
+<div class="product-chip"><span class="label">Welcome Page</span><span class="amount">234 706 kr</span></div>
 <div class="product-chip"><span class="label">A.E</span><span class="amount">63 226 kr</span></div>
-<div class="product-chip"><span class="label">Totalt</span><span class="amount">433 580 kr</span></div>
+<div class="product-chip"><span class="label">Totalt</span><span class="amount">432 000 kr</span></div>
 </div><div class="delivery-section" style="display:none;"><div class="delivery-bars"></div></div>
 </div>
 <div class="card-actions">
@@ -936,7 +951,7 @@
     el.className = '';
     const currency = market === 'se' ? 'kr' : 'NOK';
 
-    let html = '<div class="under-grid">';
+    let html = '<button class="export-btn" onclick="exportUnderCSV(\'' + market + '\')">⬇ Exportera CSV</button><div class="under-grid">';
     under.forEach(c => {
       let totalBooked = 0, totalDelivered = 0;
       let prodRows = '';
@@ -973,6 +988,33 @@
     });
     html += '</div>';
     el.innerHTML = html;
+  }
+
+  function exportUnderCSV(market) {
+    const tabEl = document.getElementById('tab-' + market);
+    if (!tabEl) return;
+    const currency = market === 'se' ? 'kr' : 'NOK';
+    const rows = [['Kampanj', 'Period', 'Produkt', 'Bokad (' + currency + ')', 'Levererad (' + currency + ')', 'Leverans %', 'Avvikelse (' + currency + ')']];
+    tabEl.querySelectorAll('[data-report-id]').forEach(card => {
+      const id = card.dataset.reportId;
+      const d = _delivery[id];
+      if (!d || !d.products || Object.keys(d.products).length === 0) return;
+      if (card.querySelector('.status-live')) return;
+      const hasUnder = Object.values(d.products).some(p => p.pct !== null && p.pct < 100);
+      if (!hasUnder) return;
+      const name = (card.querySelector('.campaign-name') || {}).textContent?.trim() || id;
+      const period = (card.querySelector('.campaign-period') || {}).textContent?.trim() || '';
+      Object.entries(d.products).forEach(([prod, p]) => {
+        if (p.pct === null || p.pct === undefined) return;
+        rows.push([name, period, prod, Math.round(p.booked), Math.round(p.delivered), p.pct.toFixed(1) + '%', Math.round(p.delivered - p.booked)]);
+      });
+    });
+    const csv = rows.map(r => r.map(v => '"' + String(v).replace(/"/g, '""') + '"').join(',')).join('\r\n');
+    const blob = new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'underleverans-' + market.toUpperCase() + '.csv'; a.click();
+    URL.revokeObjectURL(url);
   }
 
   function fmtDiff(val, currency) {
