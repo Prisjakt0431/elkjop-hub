@@ -113,22 +113,26 @@ def fetch_campaign(campaign):
         channel    = cells[2]
         ad_format  = cells[3]
         price_type = cells[8]
-        costs_booked_str  = cells[10]   # e.g. "SEK 44'688.90"
-        delivered_pct_str = cells[15]   # e.g. "87.50%" or ""
-        value_delivered_str = cells[16] # e.g. "SEK 38'000.00"
+        units_booked_str      = cells[9]    # e.g. "457'967"
+        costs_booked_str      = cells[10]   # e.g. "SEK 44'688.90"
+        impressions_str       = cells[11]   # e.g. "302'179"
+        value_delivered_str   = cells[16]   # e.g. "SEK 38'000.00"
 
         product = identify_product(channel, ad_format, price_type)
         if not product:
             log.debug("Unrecognised row: ch=%s af=%s pt=%s", channel, ad_format, price_type)
             continue
 
-        booked    = parse_number(costs_booked_str)
-        pct       = parse_pct(delivered_pct_str)
-        delivered = parse_number(value_delivered_str)
+        units_booked      = parse_number(units_booked_str)
+        impressions       = parse_number(impressions_str)
+        booked            = parse_number(costs_booked_str)
+        delivered         = parse_number(value_delivered_str)
 
-        # Fallback: compute pct from booked/delivered if Gotom column is empty
-        if pct is None and booked and delivered:
-            pct = round(delivered / booked * 100, 1)
+        # Always compute pct from impressions_delivered / units_booked (stable, no HTML noise)
+        if units_booked and units_booked > 0:
+            pct = round(impressions / units_booked * 100, 1)
+        else:
+            pct = None
 
         products[product] = {
             "booked":    booked,
