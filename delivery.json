@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-25T16:10:45Z",
+  "updated": "2026-06-29T11:30:07Z",
   "campaigns": {
     "1176": {
       "name": "Elgiganten SE – AON Juni",
@@ -7,13 +7,13 @@
       "products": {
         "ROC": {
           "booked": 33408.0,
-          "delivered": 20618.16,
-          "pct": 61.7
+          "delivered": 29920.84,
+          "pct": 89.6
         },
         "Welcome Page": {
           "booked": 110592.0,
-          "delivered": 69999.55,
-          "pct": 63.3
+          "delivered": 98511.26,
+          "pct": 89.1
         }
       }
     },
@@ -24,17 +24,17 @@
         "A.E": {
           "booked": 21075.84,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "ROC": {
           "booked": 44688.9,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "Welcome Page": {
           "booked": 78235.2,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         }
       }
     },
@@ -45,17 +45,17 @@
         "A.E": {
           "booked": 28100.12,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "ROC": {
           "booked": 59586.22,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "Welcome Page": {
           "booked": 104313.6,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         }
       }
     },
@@ -66,17 +66,17 @@
         "A.E": {
           "booked": 28100.12,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "ROC": {
           "booked": 59586.22,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "Welcome Page": {
           "booked": 104313.6,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         }
       }
     },
@@ -87,17 +87,17 @@
         "A.E": {
           "booked": 77710.05,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "ROC": {
           "booked": 164781.06,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "Welcome Page": {
           "booked": 288474.05,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         }
       }
     },
@@ -108,17 +108,17 @@
         "A.E": {
           "booked": 35125.42,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "ROC": {
           "booked": 74482.51,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "Welcome Page": {
           "booked": 130392.0,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         }
       }
     },
@@ -129,17 +129,17 @@
         "A.E": {
           "booked": 134495.99,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "ROC": {
           "booked": 285196.75,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "Welcome Page": {
           "booked": 499277.38,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         }
       }
     },
@@ -150,17 +150,17 @@
         "A.E": {
           "booked": 63226.49,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "ROC": {
           "booked": 134067.78,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "Welcome Page": {
           "booked": 234705.6,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         }
       }
     },
@@ -171,17 +171,17 @@
         "A.E": {
           "booked": 42150.65,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "ROC": {
           "booked": 89378.81,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "Welcome Page": {
           "booked": 156470.4,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         }
       }
     },
@@ -192,17 +192,17 @@
         "A.E": {
           "booked": 35125.42,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "ROC": {
           "booked": 74482.51,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "Welcome Page": {
           "booked": 130392.0,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         }
       }
     },
@@ -213,17 +213,17 @@
         "A.E": {
           "booked": 35125.42,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "ROC": {
           "booked": 74482.51,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "Welcome Page": {
           "booked": 130392.0,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         }
       }
     },
@@ -234,17 +234,17 @@
         "A.E": {
           "booked": 28100.12,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "ROC": {
           "booked": 59586.22,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "Welcome Page": {
           "booked": 104313.6,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         }
       }
     },
@@ -254,13 +254,13 @@
       "products": {
         "Welcome Page": {
           "booked": 117499.81,
-          "delivered": 58277.84,
-          "pct": 49.6
+          "delivered": 105108.45,
+          "pct": 89.5
         },
         "ROC": {
           "booked": 23499.98,
-          "delivered": 15571.46,
-          "pct": 66.3
+          "delivered": 21046.83,
+          "pct": 89.6
         }
       }
     },
@@ -271,12 +271,12 @@
         "Welcome Page": {
           "booked": 56400.0,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "ROC": {
           "booked": 84599.96,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         }
       }
     },
@@ -287,12 +287,12 @@
         "Welcome Page": {
           "booked": 56400.0,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "ROC": {
           "booked": 84599.96,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         }
       }
     },
@@ -303,12 +303,124 @@
         "Welcome Page": {
           "booked": 56400.0,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
         },
         "ROC": {
           "booked": 84599.96,
           "delivered": 0.0,
-          "pct": null
+          "pct": 0.0
+        }
+      }
+    },
+    "1200": {
+      "name": "Elkjøp NO – AON Okt 2026",
+      "market": "no",
+      "products": {
+        "Welcome Page": {
+          "booked": 56400.0,
+          "delivered": 0.0,
+          "pct": 0.0
+        },
+        "ROC": {
+          "booked": 84599.96,
+          "delivered": 0.0,
+          "pct": 0.0
+        }
+      }
+    },
+    "1201": {
+      "name": "Elkjøp NO – AON Nov 2026",
+      "market": "no",
+      "products": {
+        "Welcome Page": {
+          "booked": 56400.0,
+          "delivered": 0.0,
+          "pct": 0.0
+        },
+        "ROC": {
+          "booked": 84599.96,
+          "delivered": 0.0,
+          "pct": 0.0
+        }
+      }
+    },
+    "1202": {
+      "name": "Elkjøp NO – AON Dec 2026",
+      "market": "no",
+      "products": {
+        "Welcome Page": {
+          "booked": 56400.0,
+          "delivered": 0.0,
+          "pct": 0.0
+        },
+        "ROC": {
+          "booked": 84599.96,
+          "delivered": 0.0,
+          "pct": 0.0
+        }
+      }
+    },
+    "1203": {
+      "name": "Elkjøp NO – AON Jan 2027",
+      "market": "no",
+      "products": {
+        "Welcome Page": {
+          "booked": 56400.0,
+          "delivered": 0.0,
+          "pct": 0.0
+        },
+        "ROC": {
+          "booked": 84599.96,
+          "delivered": 0.0,
+          "pct": 0.0
+        }
+      }
+    },
+    "1204": {
+      "name": "Elkjøp NO – AON Feb 2027",
+      "market": "no",
+      "products": {
+        "Welcome Page": {
+          "booked": 56400.0,
+          "delivered": 0.0,
+          "pct": 0.0
+        },
+        "ROC": {
+          "booked": 84599.96,
+          "delivered": 0.0,
+          "pct": 0.0
+        }
+      }
+    },
+    "1205": {
+      "name": "Elkjøp NO – AON Mars 2027",
+      "market": "no",
+      "products": {
+        "Welcome Page": {
+          "booked": 56400.0,
+          "delivered": 0.0,
+          "pct": 0.0
+        },
+        "ROC": {
+          "booked": 84599.96,
+          "delivered": 0.0,
+          "pct": 0.0
+        }
+      }
+    },
+    "1206": {
+      "name": "Elkjøp NO – AON April 2027",
+      "market": "no",
+      "products": {
+        "Welcome Page": {
+          "booked": 56400.0,
+          "delivered": 0.0,
+          "pct": 0.0
+        },
+        "ROC": {
+          "booked": 84599.96,
+          "delivered": 0.0,
+          "pct": 0.0
         }
       }
     }
