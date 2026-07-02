@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02T10:20:22Z",
+  "updated": "2026-07-02T18:17:39Z",
   "campaigns": {
     "1176": {
       "name": "Elgiganten SE – AON Juni",
@@ -28,13 +28,13 @@
         },
         "ROC": {
           "booked": 44688.9,
-          "delivered": 2089.17,
-          "pct": 4.7
+          "delivered": 2893.43,
+          "pct": 6.5
         },
         "Welcome Page": {
           "booked": 78235.2,
-          "delivered": 3542.11,
-          "pct": 4.5
+          "delivered": 4824.0,
+          "pct": 6.2
         }
       }
     },
@@ -275,8 +275,8 @@
         },
         "ROC": {
           "booked": 84599.96,
-          "delivered": 3351.22,
-          "pct": 4.0
+          "delivered": 3999.37,
+          "pct": 4.7
         }
       }
     },
@@ -328,22 +328,33 @@
         }
       }
     },
-    "1201": {
+    "1221": {
       "name": "Elkjøp NO – AON Nov 2026",
       "market": "no",
-      "products": {}
+      "products": {
+        "Welcome Page": {
+          "booked": 45120.0,
+          "delivered": 0.0,
+          "pct": 0.0
+        },
+        "ROC": {
+          "booked": 67680.0,
+          "delivered": 0.0,
+          "pct": 0.0
+        }
+      }
     },
     "1213": {
       "name": "Elkjøp NO – Black Week 2026",
       "market": "no",
       "products": {
         "Welcome Page": {
-          "booked": 300799.81,
+          "booked": 255679.81,
           "delivered": 0.0,
           "pct": 0.0
         },
         "ROC": {
-          "booked": 451199.94,
+          "booked": 383519.94,
           "delivered": 0.0,
           "pct": 0.0
         }
