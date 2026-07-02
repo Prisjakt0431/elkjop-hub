@@ -38,7 +38,7 @@ CAMPAIGNS = [
     {"id": "1191", "token": "6d60ef49935cf118f24b95f3ca7adc25", "name": "Elkjøp NO – AON Aug 2026",         "market": "no"},
     {"id": "1192", "token": "6df5df0e131de1400471fe7a41e31355", "name": "Elkjøp NO – AON Sep 2026",         "market": "no"},
     {"id": "1200", "token": "1adec6870194971fda66ba63f97ba4df", "name": "Elkjøp NO – AON Okt 2026",         "market": "no"},
-    {"id": "1201", "token": "e713783777efc0b2970bb0dc6cb1acd2", "name": "Elkjøp NO – AON Nov 2026",         "market": "no"},
+    {"id": "1221", "token": "92c46a4a7c43b8b39d5bf10ac1222676", "name": "Elkjøp NO – AON Nov 2026",         "market": "no"},
     {"id": "1213", "token": "4a744abf0c6b030deb1cafc9cdefd0d8", "name": "Elkjøp NO – Black Week 2026",      "market": "no"},
     {"id": "1202", "token": "046dedf49c21dfe712a19c526b3a70be", "name": "Elkjøp NO – AON Dec 2026",         "market": "no"},
     {"id": "1203", "token": "4299c9afeb70f2fc19e0b7eb0090bfac", "name": "Elkjøp NO – AON Jan 2027",         "market": "no"},
