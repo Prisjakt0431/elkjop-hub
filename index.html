@@ -1208,5 +1208,51 @@
 
   loadDelivery();
 </script>
+
+<script>
+(function(){
+  const orderUrls = {
+    '1176': 'https://prisjakt.gotom.io/campaign-confirmation/1356/314508620b6d50145c44bb38cf8f069d',
+    '1180': 'https://prisjakt.gotom.io/campaign-confirmation/1386/f6ff5dbc8dd93af38fb114c7bd0f3fd9',
+    '1181': 'https://prisjakt.gotom.io/campaign-confirmation/1406/5ba4297f881d10aa3baedf42ecf61578',
+    '1182': 'https://prisjakt.gotom.io/campaign-confirmation/1407/5218778658a1b06e6cea3527200f9af1',
+    '1183': 'https://prisjakt.gotom.io/campaign-confirmation/1408/a77e979d920696c727867ad7bb5e4781',
+    '1184': 'https://prisjakt.gotom.io/campaign-confirmation/1409/ccb902965a11b3279ba482e902cab570',
+    '1093': 'https://prisjakt.gotom.io/campaign-confirmation/1277/c246e788e5a1e614052cd97c8a75190e',
+    '1185': 'https://prisjakt.gotom.io/campaign-confirmation/1410/e7ad0978db24f64d34b26bda8c09c8e4',
+    '1186': 'https://prisjakt.gotom.io/campaign-confirmation/1411/15f9d52fcd6a3793cfcc8138cf012bee',
+    '1187': 'https://prisjakt.gotom.io/campaign-confirmation/1412/b2c9356a1e71a523ef3cdf1a466c4c89',
+    '1188': 'https://prisjakt.gotom.io/campaign-confirmation/1413/35887f341b0162ca29a5baaa4998ed42',
+    '1189': 'https://prisjakt.gotom.io/campaign-confirmation/1414/21d56aa638af4d189fe35eff81c51096',
+    '1175': 'https://prisjakt.gotom.io/campaign-confirmation/1357/80e1cb5426fab93f00b1d8b3a3fad98a',
+    '1190': 'https://prisjakt.gotom.io/campaign-confirmation/1396/6dd125cf2191cb8565eaddd8934d0969',
+    '1191': 'https://prisjakt.gotom.io/campaign-confirmation/1415/f2f43db78cef5defc3a199bfbe0d192e',
+    '1192': 'https://prisjakt.gotom.io/campaign-confirmation/1416/93ab6610ae60a29818ac5932ee045d3e',
+    '1200': 'https://prisjakt.gotom.io/campaign-confirmation/1424/0c825404b2c677ae72d067b8b0aefd47',
+    '1221': 'https://prisjakt.gotom.io/campaign-confirmation/1451/4135c8ccc3812d04dfd9402fcea4e0c2',
+    '1213': 'https://prisjakt.gotom.io/campaign-confirmation/1438/bd120d2922d059c360f77c29fc1ddabd',
+    '1202': 'https://prisjakt.gotom.io/campaign-confirmation/1426/ca7a8dc8dd0af37b4d968aa8088ffeed',
+    '1203': 'https://prisjakt.gotom.io/campaign-confirmation/1427/230a32a23785984cc05f86722e06fa1f',
+    '1204': 'https://prisjakt.gotom.io/campaign-confirmation/1428/5644a1cf3fe22cbf112fc08d1b229dc1',
+    '1205': 'https://prisjakt.gotom.io/campaign-confirmation/1429/076ba38add0b0feac473be27501d5e26',
+    '1206': 'https://prisjakt.gotom.io/campaign-confirmation/1430/479d1d5b177d3ed4e42ef0cb8ba4ca94'
+  };
+  const icon = '<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" style="width:14px;height:14px"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="12" y2="17"></line></svg>';
+  document.querySelectorAll('.campaign-card[data-report-id]').forEach(function(card) {
+    var id = card.getAttribute('data-report-id');
+    var url = orderUrls[id];
+    if (!url) return;
+    var actions = card.querySelector('.card-actions');
+    if (!actions) return;
+    var btn = document.createElement('a');
+    btn.className = 'btn-report';
+    btn.href = url;
+    btn.target = '_blank';
+    btn.style.background = '#2e7d32';
+    btn.innerHTML = icon + ' Se order';
+    actions.appendChild(btn);
+  });
+})();
+</script>
 </body>
 </html>
