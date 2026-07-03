@@ -152,11 +152,12 @@ def fetch_campaign(campaign):
             ctr = None
 
         products[product] = {
-            "booked":    booked,
-            "delivered": delivered,
-            "pct":       pct,    # None if not yet started
-            "clicks":    clicks,
-            "ctr":       ctr,    # % e.g. 0.16
+            "booked":      booked,
+            "delivered":   delivered,
+            "pct":         pct,         # None if not yet started
+            "impressions": int(impressions),
+            "clicks":      clicks,
+            "ctr":         ctr,         # % e.g. 0.16
         }
 
     return products
