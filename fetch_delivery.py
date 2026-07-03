@@ -17,34 +17,34 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 log = logging.getLogger(__name__)
 
 # ── Campaign registry ──────────────────────────────────────────────────────────
-# market: "se" or "no"  |  id: Gotom task id  |  token: URL hash
+# market: "se" or "no"  |  type: "aon" or "pm"  |  id: Gotom task id  |  token: URL hash
 CAMPAIGNS = [
-    # Sweden
-    {"id": "1176", "token": "6206f3e3dc2868875ea4b4bda3120732", "name": "Elgiganten SE – AON Juni",          "market": "se", "duration": True},
-    {"id": "1180", "token": "c858e7512dbf170e0df906fbc582c9b7", "name": "Elgiganten SE – AON Juli",          "market": "se"},
-    {"id": "1181", "token": "fdb610295414f686fdc0149ca8b3e05a", "name": "Elgiganten SE – AON Augusti",       "market": "se"},
-    {"id": "1182", "token": "98856ddf26060fa0bd2da9b6cff4cd38", "name": "Elgiganten SE – AON September",     "market": "se"},
-    {"id": "1183", "token": "b1032c78a2d18906a7b30aaa00bd448f", "name": "Elgiganten SE – AON Oktober",      "market": "se"},
-    {"id": "1184", "token": "89a6db4b04b973253a295537435b5162", "name": "Elgiganten SE – AON November",     "market": "se"},
-    {"id": "1093", "token": "99255fd10b5945724da5dc8db50ed338", "name": "Elgiganten SE – Black Week 2026",  "market": "se"},
-    {"id": "1185", "token": "a35fc595e50c4fcd06ddb911bc17acc5", "name": "Elgiganten SE – AON December",     "market": "se"},
-    {"id": "1186", "token": "673e94b2b05e7be4ea524add11ab43f8", "name": "Elgiganten SE – AON Januari 2027", "market": "se"},
-    {"id": "1187", "token": "716daf04a86947e4982106727514b41e", "name": "Elgiganten SE – AON Februari 2027","market": "se"},
-    {"id": "1188", "token": "8902ec6b2fcef5949ccf708953ec0c7e", "name": "Elgiganten SE – AON Mars 2027",    "market": "se"},
-    {"id": "1189", "token": "4b04da17581e2fcbc8f122bbcf28b82c", "name": "Elgiganten SE – AON April 2027",   "market": "se"},
-    # Norway
-    {"id": "1175", "token": "bc8cd543dba15b0c206ac1087a6c1ab4", "name": "Elkjøp NO – AON Juni",             "market": "no", "duration": True},
-    {"id": "1190", "token": "d6939225eb363f8b9a15abb36528a9fa", "name": "Elkjøp NO – AON Juli 2026",        "market": "no"},
-    {"id": "1191", "token": "6d60ef49935cf118f24b95f3ca7adc25", "name": "Elkjøp NO – AON Aug 2026",         "market": "no"},
-    {"id": "1192", "token": "6df5df0e131de1400471fe7a41e31355", "name": "Elkjøp NO – AON Sep 2026",         "market": "no"},
-    {"id": "1200", "token": "1adec6870194971fda66ba63f97ba4df", "name": "Elkjøp NO – AON Okt 2026",         "market": "no"},
-    {"id": "1221", "token": "92c46a4a7c43b8b39d5bf10ac1222676", "name": "Elkjøp NO – AON Nov 2026",         "market": "no"},
-    {"id": "1213", "token": "4a744abf0c6b030deb1cafc9cdefd0d8", "name": "Elkjøp NO – Black Week 2026",      "market": "no"},
-    {"id": "1202", "token": "046dedf49c21dfe712a19c526b3a70be", "name": "Elkjøp NO – AON Dec 2026",         "market": "no"},
-    {"id": "1203", "token": "4299c9afeb70f2fc19e0b7eb0090bfac", "name": "Elkjøp NO – AON Jan 2027",         "market": "no"},
-    {"id": "1204", "token": "270b95e2d47b452df61136716b3579a3", "name": "Elkjøp NO – AON Feb 2027",         "market": "no"},
-    {"id": "1205", "token": "ff13a0e415723957cba4099cd4e8496c", "name": "Elkjøp NO – AON Mars 2027",        "market": "no"},
-    {"id": "1206", "token": "42566154746fea246f77502464975d3c", "name": "Elkjøp NO – AON April 2027",       "market": "no"},
+    # Sweden – AON
+    {"id": "1176", "token": "6206f3e3dc2868875ea4b4bda3120732", "name": "Elgiganten SE – AON Juni",          "market": "se", "type": "aon", "duration": True},
+    {"id": "1180", "token": "c858e7512dbf170e0df906fbc582c9b7", "name": "Elgiganten SE – AON Juli",          "market": "se", "type": "aon"},
+    {"id": "1181", "token": "fdb610295414f686fdc0149ca8b3e05a", "name": "Elgiganten SE – AON Augusti",       "market": "se", "type": "aon"},
+    {"id": "1182", "token": "98856ddf26060fa0bd2da9b6cff4cd38", "name": "Elgiganten SE – AON September",     "market": "se", "type": "aon"},
+    {"id": "1183", "token": "b1032c78a2d18906a7b30aaa00bd448f", "name": "Elgiganten SE – AON Oktober",      "market": "se", "type": "aon"},
+    {"id": "1184", "token": "89a6db4b04b973253a295537435b5162", "name": "Elgiganten SE – AON November",     "market": "se", "type": "aon"},
+    {"id": "1093", "token": "99255fd10b5945724da5dc8db50ed338", "name": "Elgiganten SE – Black Week 2026",  "market": "se", "type": "aon"},
+    {"id": "1185", "token": "a35fc595e50c4fcd06ddb911bc17acc5", "name": "Elgiganten SE – AON December",     "market": "se", "type": "aon"},
+    {"id": "1186", "token": "673e94b2b05e7be4ea524add11ab43f8", "name": "Elgiganten SE – AON Januari 2027", "market": "se", "type": "aon"},
+    {"id": "1187", "token": "716daf04a86947e4982106727514b41e", "name": "Elgiganten SE – AON Februari 2027","market": "se", "type": "aon"},
+    {"id": "1188", "token": "8902ec6b2fcef5949ccf708953ec0c7e", "name": "Elgiganten SE – AON Mars 2027",    "market": "se", "type": "aon"},
+    {"id": "1189", "token": "4b04da17581e2fcbc8f122bbcf28b82c", "name": "Elgiganten SE – AON April 2027",   "market": "se", "type": "aon"},
+    # Norway – AON
+    {"id": "1175", "token": "bc8cd543dba15b0c206ac1087a6c1ab4", "name": "Elkjøp NO – AON Juni",             "market": "no", "type": "aon", "duration": True},
+    {"id": "1190", "token": "d6939225eb363f8b9a15abb36528a9fa", "name": "Elkjøp NO – AON Juli 2026",        "market": "no", "type": "aon"},
+    {"id": "1191", "token": "6d60ef49935cf118f24b95f3ca7adc25", "name": "Elkjøp NO – AON Aug 2026",         "market": "no", "type": "aon"},
+    {"id": "1192", "token": "6df5df0e131de1400471fe7a41e31355", "name": "Elkjøp NO – AON Sep 2026",         "market": "no", "type": "aon"},
+    {"id": "1200", "token": "1adec6870194971fda66ba63f97ba4df", "name": "Elkjøp NO – AON Okt 2026",         "market": "no", "type": "aon"},
+    {"id": "1221", "token": "92c46a4a7c43b8b39d5bf10ac1222676", "name": "Elkjøp NO – AON Nov 2026",         "market": "no", "type": "aon"},
+    {"id": "1213", "token": "4a744abf0c6b030deb1cafc9cdefd0d8", "name": "Elkjøp NO – Black Week 2026",      "market": "no", "type": "aon"},
+    {"id": "1202", "token": "046dedf49c21dfe712a19c526b3a70be", "name": "Elkjøp NO – AON Dec 2026",         "market": "no", "type": "aon"},
+    {"id": "1203", "token": "4299c9afeb70f2fc19e0b7eb0090bfac", "name": "Elkjøp NO – AON Jan 2027",         "market": "no", "type": "aon"},
+    {"id": "1204", "token": "270b95e2d47b452df61136716b3579a3", "name": "Elkjøp NO – AON Feb 2027",         "market": "no", "type": "aon"},
+    {"id": "1205", "token": "ff13a0e415723957cba4099cd4e8496c", "name": "Elkjøp NO – AON Mars 2027",        "market": "no", "type": "aon"},
+    {"id": "1206", "token": "42566154746fea246f77502464975d3c", "name": "Elkjøp NO – AON April 2027",       "market": "no", "type": "aon"},
 ]
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (prisjakt delivery-checker/1.0)"}
@@ -175,6 +175,7 @@ def main():
         result["campaigns"][c["id"]] = {
             "name":     c["name"],
             "market":   c["market"],
+            "type":     c.get("type", "aon"),
             "products": products,
         }
         time.sleep(1)  # be polite
