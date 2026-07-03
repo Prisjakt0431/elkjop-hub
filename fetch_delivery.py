@@ -124,6 +124,8 @@ def fetch_campaign(campaign):
         units_booked_str      = cells[9]    # e.g. "457'967"
         costs_booked_str      = cells[10]   # e.g. "SEK 44'688.90"
         impressions_str       = cells[11]   # e.g. "302'179"
+        clicks_str            = cells[13]   # e.g. "718 edit close"
+        ctr_str               = cells[14]   # e.g. "0.16%"
         value_delivered_str   = cells[16]   # e.g. "SEK 38'000.00"
 
         product = identify_product(channel, ad_format, price_type)
@@ -135,17 +137,26 @@ def fetch_campaign(campaign):
         impressions       = parse_number(impressions_str)
         booked            = parse_number(costs_booked_str)
         delivered         = parse_number(value_delivered_str)
+        clicks            = int(parse_number(clicks_str))
 
-        # Always compute pct from impressions_delivered / units_booked (stable, no HTML noise)
+        # Delivery pct from impressions / units_booked (stable, no HTML noise)
         if units_booked and units_booked > 0:
             pct = round(impressions / units_booked * 100, 1)
         else:
             pct = None
 
+        # CTR from table (col 14) — 2 decimal places
+        try:
+            ctr = round(float(ctr_str.replace('%', '').replace(',', '.').strip()), 2)
+        except (ValueError, AttributeError):
+            ctr = None
+
         products[product] = {
             "booked":    booked,
             "delivered": delivered,
-            "pct":       pct,   # None if not yet started
+            "pct":       pct,    # None if not yet started
+            "clicks":    clicks,
+            "ctr":       ctr,    # % e.g. 0.16
         }
 
     return products
