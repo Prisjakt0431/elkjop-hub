@@ -1230,36 +1230,62 @@
   function buildAggTab(market, contentId) {
     var el = document.getElementById(contentId); if (!el) return;
     var currency = market === 'se' ? 'kr' : 'NOK';
-    var prodAgg = {}, tB=0, tD=0, tC=0, tI=0, n=0;
-    Object.values(_delivery).forEach(function(camp) {
-      if (camp.market !== market || !camp.products) return;
-      if (!Object.values(camp.products).some(function(p){return p.pct!==null&&p.pct!==undefined&&p.pct>0;})) return;
-      n++;
-      Object.entries(camp.products).forEach(function(e2) {
-        var prod=e2[0],p=e2[1]; if(p.pct===null||p.pct===undefined) return;
-        if(!prodAgg[prod]) prodAgg[prod]={booked:0,delivered:0,clicks:0,impressions:0};
-        prodAgg[prod].booked+=p.booked||0; prodAgg[prod].delivered+=p.delivered||0;
-        prodAgg[prod].clicks+=p.clicks||0; prodAgg[prod].impressions+=p.impressions||0;
-        tB+=p.booked||0; tD+=p.delivered||0; tC+=p.clicks||0; tI+=p.impressions||0;
+    var types = [{key:'aon',label:'AON – Always-On'},{key:'pm',label:'PM – Partner Marketing'}];
+    var html = '';
+    var anyData = false;
+    types.forEach(function(t) {
+      var prodAgg = {}, tB=0, tD=0, tC=0, tI=0, nStarted=0, nTotal=0;
+      Object.values(_delivery).forEach(function(camp) {
+        if (camp.market !== market) return;
+        if ((camp.type||'aon') !== t.key) return;
+        if (!camp.products || Object.keys(camp.products).length === 0) return;
+        nTotal++;
+        var campStarted = Object.values(camp.products).some(function(p){return p.pct!==null&&p.pct!==undefined&&p.pct>0;});
+        if (campStarted) nStarted++;
+        Object.entries(camp.products).forEach(function(e2) {
+          var prod=e2[0], p=e2[1]; if(p.pct===null||p.pct===undefined) return;
+          if(!prodAgg[prod]) prodAgg[prod]={booked:0,delivered:0,clicks:0,impressions:0};
+          prodAgg[prod].booked += p.booked||0; tB += p.booked||0;
+          if (campStarted) {
+            prodAgg[prod].delivered += p.delivered||0;
+            prodAgg[prod].clicks += p.clicks||0;
+            prodAgg[prod].impressions += p.impressions||0;
+            tD += p.delivered||0; tC += p.clicks||0; tI += p.impressions||0;
+          }
+        });
       });
+      if (nTotal === 0) return;
+      anyData = true;
+      var tPct = tB>0 ? (tD/tB*100).toFixed(1) : '–';
+      var tCTR = tI>0 ? (tC/tI*100).toFixed(2)+'%' : '–';
+      var rows = '';
+      ['ROC','Welcome Page','A.E'].forEach(function(prod) {
+        var a=prodAgg[prod]; if(!a||a.booked===0) return;
+        var pct = a.booked>0 ? (a.delivered/a.booked*100).toFixed(1) : '–';
+        var ctr = a.impressions>0 ? (a.clicks/a.impressions*100).toFixed(2)+'%' : '–';
+        rows += '<tr><td>'+prod+'</td><td>'+Math.round(a.booked).toLocaleString('sv-SE')+' '+currency+'</td>'
+               +'<td>'+Math.round(a.delivered).toLocaleString('sv-SE')+' '+currency+'</td>'
+               +'<td>'+pct+'%</td><td>'+a.clicks.toLocaleString('sv-SE')+'</td><td>'+ctr+'</td></tr>';
+      });
+      html += '<h4 style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#999;margin:20px 0 10px;">'+t.label+'</h4>';
+      if (nStarted===0) {
+        html += '<p style="font-size:13px;color:#aaa;margin-bottom:8px;">Inga kampanjer har startat ännu.</p>';
+      }
+      html += '<div class="under-card" style="overflow-x:auto;margin-bottom:8px;"><table class="agg-table">'
+           +'<thead><tr><th>Produkt</th><th>Bokad</th><th>Levererat</th><th>Leverans %</th><th>Klick</th><th>Snitt CTR</th></tr></thead>'
+           +'<tbody>'+rows+'</tbody>'
+           +'<tfoot><tr><td><strong>Bokat totalt</strong></td>'
+           +'<td><strong>'+Math.round(tB).toLocaleString('sv-SE')+' '+currency+'</strong></td>'
+           +'<td><strong>'+Math.round(tD).toLocaleString('sv-SE')+' '+currency+'</strong></td>'
+           +'<td><strong>'+(tPct!=='–'?tPct+'%':'–')+'</strong></td>'
+           +'<td><strong>'+tC.toLocaleString('sv-SE')+'</strong></td>'
+           +'<td><strong>'+tCTR+'</strong></td>'
+           +'</tr></tfoot></table></div>';
+      html += '<p style="font-size:12px;color:#aaa;margin-bottom:4px;">'+nTotal+' kampanjer totalt, '+nStarted+' startade. Bokad visar helperioden jun 2026–apr 2027.</p>';
     });
-    if (n===0){el.className='under-empty';el.innerHTML='Ingen data ännu — visas här när kampanjer startar.';return;}
-    var tPct=tB>0?(tD/tB*100).toFixed(1):'–';
-    var tCTR=tI>0?(tC/tI*100).toFixed(2)+'%':'–';
-    var rows='';
-    ['ROC','Welcome Page','A.E'].forEach(function(prod){
-      var a=prodAgg[prod]; if(!a) return;
-      var pct=a.booked>0?(a.delivered/a.booked*100).toFixed(1):'–';
-      var ctr=a.impressions>0?(a.clicks/a.impressions*100).toFixed(2)+'%':'–';
-      rows+='<tr><td>'+prod+'</td><td>'+Math.round(a.booked).toLocaleString('sv-SE')+' '+currency+'</td><td>'+Math.round(a.delivered).toLocaleString('sv-SE')+' '+currency+'</td><td>'+pct+'%</td><td>'+a.clicks.toLocaleString('sv-SE')+'</td><td>'+ctr+'</td></tr>';
-    });
+    if (!anyData) { el.className='under-empty'; el.innerHTML='Ingen kampanjdata..'; return; }
     el.className='';
-    el.innerHTML='<p style="font-size:13px;color:#888;margin-bottom:16px;">Inkluderar '+n+' startade kampanjer. Uppdateras varannan timme.</p>'
-      +'<div class="under-card" style="overflow-x:auto;"><table class="agg-table">'
-      +'<thead><tr><th>Produkt</th><th>Bokad</th><th>Levererat</th><th>Leverans %</th><th>Klick</th><th>Snitt CTR</th></tr></thead>'
-      +'<tbody>'+rows+'</tbody>'
-      +'<tfoot><tr><td><strong>Agency net</strong></td><td><strong>'+Math.round(tB).toLocaleString('sv-SE')+' '+currency+'</strong></td><td><strong>'+Math.round(tD).toLocaleString('sv-SE')+' '+currency+'</strong></td><td><strong>'+tPct+'%</strong></td><td><strong>'+tC.toLocaleString('sv-SE')+'</strong></td><td><strong>'+tCTR+'</strong></td></tr></tfoot>'
-      +'</table></div>';
+    el.innerHTML = html;
   }
   function exportCampaignCSV(id, market) {
     var currency = market === 'se' ? 'kr' : 'NOK';
