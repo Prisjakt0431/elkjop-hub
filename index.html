@@ -1159,9 +1159,12 @@
       const totalCls   = totalDiff >= 0 ? 'good' : 'bad';
       html += `
         <div class="under-card">
-          <div class="under-card-header">
-            <div class="campaign-name">${c.name}</div>
-            <div class="campaign-period" style="margin-top:2px">${c.period}</div>
+          <div class="under-card-header" style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+            <div>
+              <div class="campaign-name">${c.name}</div>
+              <div class="campaign-period" style="margin-top:2px">${c.period}</div>
+            </div>
+            <button class="export-btn" style="margin:0;font-size:11px;padding:4px 10px;flex-shrink:0;" onclick="exportCampaignCSV('${c.id}','${market}')">⬇ CSV</button>
           </div>
           ${prodRows}
           <div class="under-total">
@@ -1204,6 +1207,29 @@
   function fmtDiff(val, currency) {
     const sign = val >= 0 ? '+' : '';
     return sign + Math.round(val).toLocaleString('sv-SE') + ' ' + currency;
+  }
+
+  function exportCampaignCSV(id, market) {
+    var currency = market === 'se' ? 'kr' : 'NOK';
+    var d = _delivery[id];
+    if (!d || !d.products) return;
+    var tabEl = document.getElementById('tab-' + market);
+    var card = tabEl ? tabEl.querySelector('[data-report-id="' + id + '"]') : null;
+    var name = card ? ((card.querySelector('.campaign-name') || {}).textContent || '').trim() : (d.name || id);
+    var period = card ? ((card.querySelector('.campaign-period') || {}).textContent || '').trim() : '';
+    var rows = [['Kampanj', 'Period', 'Produkt', 'Bokad (' + currency + ')', 'Levererad (' + currency + ')', 'Leverans %', 'Avvikelse (' + currency + ')']];
+    Object.entries(d.products).forEach(function(entry) {
+      var prod = entry[0], p = entry[1];
+      if (p.pct === null || p.pct === undefined) return;
+      rows.push([name, period, prod, Math.round(p.booked), Math.round(p.delivered), p.pct.toFixed(1) + '%', Math.round(p.delivered - p.booked)]);
+    });
+    var csv = rows.map(function(r) { return r.map(function(v) { return '"' + String(v).replace(/"/g, '""') + '"'; }).join(','); }).join('\r\n');
+    var blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    var safeName = name.replace(/\s+/g, '_').replace(/[^\w\-]/g, '');
+    a.href = url; a.download = 'underleverans_' + safeName + '.csv'; a.click();
+    URL.revokeObjectURL(url);
   }
 
   loadDelivery();
