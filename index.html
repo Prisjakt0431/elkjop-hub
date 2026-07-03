@@ -1153,7 +1153,7 @@
     el.className = '';
     const currency = market === 'se' ? 'kr' : 'NOK';
 
-    let html = '<button class="export-btn" onclick="exportUnderCSV(\'' + market + '\')">⬇ Exportera CSV</button><div class="under-grid">';
+    let html = '<button class="export-btn" onclick="exportUnderCSV(\'' + market + '\')">⬇ Exportera total CSV</button><div class="under-grid">';
     under.forEach(c => {
       let totalBooked = 0, totalDelivered = 0;
       let prodRows = '';
