@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T09:50:30Z",
+  "updated": "2026-07-25T11:12:39Z",
   "campaigns": {
     "1176": {
       "name": "Elgiganten SE – AON Juni",
@@ -31,26 +31,26 @@
       "products": {
         "A.E": {
           "booked": 21075.84,
-          "delivered": 17249.84,
-          "pct": 81.8,
-          "impressions": 236466,
+          "delivered": 17257.71,
+          "pct": 81.9,
+          "impressions": 236574,
           "clicks": 337,
           "ctr": 0.14
         },
         "ROC": {
           "booked": 44688.9,
-          "delivered": 36456.29,
-          "pct": 81.6,
-          "impressions": 499754,
-          "clicks": 765,
+          "delivered": 36591.91,
+          "pct": 81.9,
+          "impressions": 501613,
+          "clicks": 767,
           "ctr": 0.15
         },
         "Welcome Page": {
           "booked": 78235.2,
-          "delivered": 63393.98,
-          "pct": 81.0,
-          "impressions": 220118,
-          "clicks": 4058,
+          "delivered": 63668.74,
+          "pct": 81.4,
+          "impressions": 221072,
+          "clicks": 4073,
           "ctr": 1.84
         }
       }
@@ -395,18 +395,18 @@
       "products": {
         "Welcome Page": {
           "booked": 56400.0,
-          "delivered": 44343.37,
-          "pct": 78.6,
-          "impressions": 157246,
-          "clicks": 1939,
+          "delivered": 44483.53,
+          "pct": 78.9,
+          "impressions": 157743,
+          "clicks": 1948,
           "ctr": 1.23
         },
         "ROC": {
           "booked": 84599.96,
-          "delivered": 66243.49,
-          "pct": 78.3,
-          "impressions": 927407,
-          "clicks": 1040,
+          "delivered": 66483.85,
+          "pct": 78.6,
+          "impressions": 930772,
+          "clicks": 1042,
           "ctr": 0.11
         }
       }
