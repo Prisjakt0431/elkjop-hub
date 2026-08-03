@@ -45,6 +45,8 @@ CAMPAIGNS = [
     {"id": "1204", "token": "270b95e2d47b452df61136716b3579a3", "name": "Elkjøp NO – AON Feb 2027",         "market": "no", "type": "aon"},
     {"id": "1205", "token": "ff13a0e415723957cba4099cd4e8496c", "name": "Elkjøp NO – AON Mars 2027",        "market": "no", "type": "aon"},
     {"id": "1206", "token": "42566154746fea246f77502464975d3c", "name": "Elkjøp NO – AON April 2027",       "market": "no", "type": "aon"},
+    # Norway – PM
+    {"id": "1217", "token": "3ffac13756a99c735123d49719613246", "name": "Elkjøp NO – PM Hisense v.28-36",    "market": "no", "type": "pm"},
 ]
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (prisjakt delivery-checker/1.0)"}
