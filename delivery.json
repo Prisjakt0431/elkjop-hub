@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-03T07:30:11Z",
+  "updated": "2026-08-03T07:57:44Z",
   "campaigns": {
     "1176": {
       "name": "Elgiganten SE – AON Juni",
@@ -638,6 +638,37 @@
           "impressions": 0,
           "clicks": 0,
           "ctr": 0.0
+        }
+      }
+    },
+    "1217": {
+      "name": "Elkjøp NO – PM Hisense v.28-36",
+      "market": "no",
+      "type": "pm",
+      "products": {
+        "Welcome Page": {
+          "booked": 103663.2,
+          "delivered": 55385.08,
+          "pct": 53.4,
+          "impressions": 196401,
+          "clicks": 3223,
+          "ctr": 1.64
+        },
+        "ROC": {
+          "booked": 33576.78,
+          "delivered": 17898.82,
+          "pct": 53.3,
+          "impressions": 250583,
+          "clicks": 365,
+          "ctr": 0.15
+        },
+        "A.E": {
+          "booked": 28199.99,
+          "delivered": 15143.17,
+          "pct": 53.7,
+          "impressions": 212004,
+          "clicks": 333,
+          "ctr": 0.16
         }
       }
     }
