@@ -155,14 +155,19 @@ def fetch_campaign(campaign):
         except (ValueError, AttributeError):
             ctr = None
 
-        products[product] = {
-            "booked":      booked,
-            "delivered":   delivered,
-            "pct":         pct,         # None if not yet started
-            "impressions": int(impressions),
-            "clicks":      clicks,
-            "ctr":         ctr,         # % e.g. 0.16
-        }
+        # Aggregate multiple rows of same product (e.g. two ROC flights)
+        if product not in products:
+            products[product] = {"booked": 0, "delivered": 0, "pct": None, "impressions": 0, "clicks": 0, "ctr": None, "_units": 0}
+        products[product]["booked"]      += booked
+        products[product]["delivered"]   += delivered
+        products[product]["impressions"] += int(impressions)
+        products[product]["clicks"]      += clicks
+        products[product]["_units"]      += units_booked
+        t_imp = products[product]["impressions"]
+        t_u   = products[product]["_units"]
+        t_c   = products[product]["clicks"]
+        products[product]["pct"] = round(t_imp / t_u * 100, 1) if t_u > 0 else None
+        products[product]["ctr"] = round(t_c / t_imp * 100, 2) if t_imp > 0 else None
 
     return products
 
