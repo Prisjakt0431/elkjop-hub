@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-02T14:10:28Z",
+  "updated": "2026-09-02T19:16:13Z",
   "campaigns": {
     "1176": {
       "name": "Elgiganten SE – AON Juni",
@@ -101,29 +101,29 @@
       "products": {
         "A.E": {
           "booked": 9142.49,
-          "delivered": 522.38,
-          "pct": 5.7,
-          "impressions": 7161,
+          "delivered": 608.03,
+          "pct": 6.7,
+          "impressions": 8335,
           "clicks": 5,
-          "ctr": 0.07,
+          "ctr": 0.06,
           "_units": 125328.0
         },
         "ROC": {
           "booked": 19377.89,
-          "delivered": 995.75,
-          "pct": 5.1,
-          "impressions": 13650,
-          "clicks": 33,
-          "ctr": 0.24,
+          "delivered": 1291.92,
+          "pct": 6.7,
+          "impressions": 17710,
+          "clicks": 41,
+          "ctr": 0.23,
           "_units": 265638.0
         },
         "Welcome Page": {
           "booked": 33928.42,
-          "delivered": 1805.47,
-          "pct": 5.3,
-          "impressions": 6269,
-          "clicks": 65,
-          "ctr": 1.04,
+          "delivered": 2265.12,
+          "pct": 6.7,
+          "impressions": 7865,
+          "clicks": 85,
+          "ctr": 1.08,
           "_units": 117807.0
         }
       }
@@ -482,20 +482,20 @@
       "products": {
         "Welcome Page": {
           "booked": 56400.0,
-          "delivered": 2589.04,
-          "pct": 4.6,
-          "impressions": 9181,
-          "clicks": 218,
+          "delivered": 3251.18,
+          "pct": 5.8,
+          "impressions": 11529,
+          "clicks": 273,
           "ctr": 2.37,
           "_units": 200000.0
         },
         "ROC": {
           "booked": 84599.96,
-          "delivered": 3841.94,
-          "pct": 4.5,
-          "impressions": 53787,
-          "clicks": 118,
-          "ctr": 0.22,
+          "delivered": 4716.8,
+          "pct": 5.6,
+          "impressions": 66035,
+          "clicks": 132,
+          "ctr": 0.2,
           "_units": 1184397.0
         }
       }
