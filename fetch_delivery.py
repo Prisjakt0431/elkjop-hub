@@ -46,7 +46,9 @@ CAMPAIGNS = [
     {"id": "1205", "token": "ff13a0e415723957cba4099cd4e8496c", "name": "Elkjøp NO – AON Mars 2027",        "market": "no", "type": "aon"},
     {"id": "1206", "token": "42566154746fea246f77502464975d3c", "name": "Elkjøp NO – AON April 2027",       "market": "no", "type": "aon"},
     # Sweden – PM
-    {"id": "1218", "token": "019132175ecc01e0ab007b67e0e5cbef", "name": "Elgiganten SE – PM Hisense v.28-36", "market": "se", "type": "pm"},
+    {"id": "1218", "token": "019132175ecc01e0ab007b67e0e5cbef", "name": "Elgiganten SE – PM Hisense v.28-36",      "market": "se", "type": "pm"},
+    {"id": "1313", "token": "4ca74cd45f7a21be103aa115fc023231", "name": "Elgiganten SE – PM Deals Indoor v.39-40", "market": "se", "type": "pm"},
+    {"id": "1314", "token": "9998a35d69f5c29f6d11ee885e6b9359", "name": "Elgiganten SE – PM Deals Indoor v.41-43", "market": "se", "type": "pm"},
     # Norway – PM
     {"id": "1217", "token": "3ffac13756a99c735123d49719613246", "name": "Elkjøp NO – PM Hisense v.28-36",    "market": "no", "type": "pm"},
 ]
