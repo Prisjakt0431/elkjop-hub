@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-06T23:35:40Z",
+  "updated": "2026-09-07T03:34:48Z",
   "campaigns": {
     "1176": {
       "name": "Elgiganten SE – AON Juni",
@@ -101,29 +101,29 @@
       "products": {
         "A.E": {
           "booked": 9142.49,
-          "delivered": 1981.72,
-          "pct": 21.7,
-          "impressions": 27166,
+          "delivered": 2042.48,
+          "pct": 22.3,
+          "impressions": 27999,
           "clicks": 11,
           "ctr": 0.04,
           "_units": 125328.0
         },
         "ROC": {
           "booked": 19377.89,
-          "delivered": 4211.17,
-          "pct": 21.7,
-          "impressions": 57728,
-          "clicks": 108,
+          "delivered": 4330.81,
+          "pct": 22.3,
+          "impressions": 59368,
+          "clicks": 114,
           "ctr": 0.19,
           "_units": 265638.0
         },
         "Welcome Page": {
           "booked": 33928.42,
-          "delivered": 7506.14,
-          "pct": 22.1,
-          "impressions": 26063,
-          "clicks": 279,
-          "ctr": 1.07,
+          "delivered": 7668.29,
+          "pct": 22.6,
+          "impressions": 26626,
+          "clicks": 287,
+          "ctr": 1.08,
           "_units": 117807.0
         }
       }
@@ -482,20 +482,20 @@
       "products": {
         "Welcome Page": {
           "booked": 56400.0,
-          "delivered": 11699.9,
-          "pct": 20.7,
-          "impressions": 41489,
-          "clicks": 1006,
-          "ctr": 2.42,
+          "delivered": 12048.17,
+          "pct": 21.4,
+          "impressions": 42724,
+          "clicks": 1038,
+          "ctr": 2.43,
           "_units": 200000.0
         },
         "ROC": {
           "booked": 84599.96,
-          "delivered": 13820.89,
-          "pct": 16.3,
-          "impressions": 193492,
-          "clicks": 453,
-          "ctr": 0.23,
+          "delivered": 14180.67,
+          "pct": 16.8,
+          "impressions": 198529,
+          "clicks": 471,
+          "ctr": 0.24,
           "_units": 1184397.0
         }
       }
