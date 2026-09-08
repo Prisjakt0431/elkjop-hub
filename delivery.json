@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-08T14:13:53Z",
+  "updated": "2026-09-08T19:18:42Z",
   "campaigns": {
     "1176": {
       "name": "Elgiganten SE – AON Juni",
@@ -64,777 +64,157 @@
       "name": "Elgiganten SE – AON Augusti",
       "market": "se",
       "type": "aon",
-      "products": {
-        "A.E": {
-          "booked": 28100.12,
-          "delivered": 28245.94,
-          "pct": 100.5,
-          "impressions": 387204,
-          "clicks": 224,
-          "ctr": 0.06,
-          "_units": 385205.0
-        },
-        "ROC": {
-          "booked": 59586.22,
-          "delivered": 59739.99,
-          "pct": 100.3,
-          "impressions": 818934,
-          "clicks": 1395,
-          "ctr": 0.17,
-          "_units": 816826.0
-        },
-        "Welcome Page": {
-          "booked": 104313.6,
-          "delivered": 104919.55,
-          "pct": 100.6,
-          "impressions": 364304,
-          "clicks": 4323,
-          "ctr": 1.19,
-          "_units": 362200.0
-        }
-      }
+      "products": {}
     },
     "1182": {
       "name": "Elgiganten SE – AON September",
       "market": "se",
       "type": "aon",
-      "products": {
-        "A.E": {
-          "booked": 9142.49,
-          "delivered": 2522.85,
-          "pct": 27.6,
-          "impressions": 34584,
-          "clicks": 15,
-          "ctr": 0.04,
-          "_units": 125328.0
-        },
-        "ROC": {
-          "booked": 19377.89,
-          "delivered": 5323.34,
-          "pct": 27.5,
-          "impressions": 72974,
-          "clicks": 130,
-          "ctr": 0.18,
-          "_units": 265638.0
-        },
-        "Welcome Page": {
-          "booked": 33928.42,
-          "delivered": 9323.71,
-          "pct": 27.5,
-          "impressions": 32374,
-          "clicks": 361,
-          "ctr": 1.12,
-          "_units": 117807.0
-        }
-      }
+      "products": {}
     },
     "1183": {
       "name": "Elgiganten SE – AON Oktober",
       "market": "se",
       "type": "aon",
-      "products": {
-        "A.E": {
-          "booked": 9142.49,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 125328.0
-        },
-        "ROC": {
-          "booked": 19377.89,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 265638.0
-        },
-        "Welcome Page": {
-          "booked": 33928.42,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 117807.0
-        }
-      }
+      "products": {}
     },
     "1184": {
       "name": "Elgiganten SE – AON November",
       "market": "se",
       "type": "aon",
-      "products": {
-        "A.E": {
-          "booked": 9142.49,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 125328.0
-        },
-        "ROC": {
-          "booked": 19377.89,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 265638.0
-        },
-        "Welcome Page": {
-          "booked": 33928.42,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 117807.0
-        }
-      }
+      "products": {}
     },
     "1093": {
       "name": "Elgiganten SE – Black Week 2026",
       "market": "se",
       "type": "aon",
-      "products": {
-        "A.E": {
-          "booked": 134537.28,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 922139.0
-        },
-        "ROC": {
-          "booked": 285156.48,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 1954506.0
-        },
-        "Welcome Page": {
-          "booked": 499276.22,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 866799.0
-        }
-      }
+      "products": {}
     },
     "1185": {
       "name": "Elgiganten SE – AON December",
       "market": "se",
       "type": "aon",
-      "products": {
-        "A.E": {
-          "booked": 9142.49,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 125328.0
-        },
-        "ROC": {
-          "booked": 19377.89,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 265638.0
-        },
-        "Welcome Page": {
-          "booked": 33928.42,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 117807.0
-        }
-      }
+      "products": {}
     },
     "1186": {
       "name": "Elgiganten SE – AON Januari 2027",
       "market": "se",
       "type": "aon",
-      "products": {
-        "A.E": {
-          "booked": 9142.49,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 125328.0
-        },
-        "ROC": {
-          "booked": 19377.89,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 265638.0
-        },
-        "Welcome Page": {
-          "booked": 33928.42,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 117807.0
-        }
-      }
+      "products": {}
     },
     "1187": {
       "name": "Elgiganten SE – AON Februari 2027",
       "market": "se",
       "type": "aon",
-      "products": {
-        "A.E": {
-          "booked": 9142.49,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 125328.0
-        },
-        "ROC": {
-          "booked": 19377.89,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 265638.0
-        },
-        "Welcome Page": {
-          "booked": 33928.42,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 117807.0
-        }
-      }
+      "products": {}
     },
     "1188": {
       "name": "Elgiganten SE – AON Mars 2027",
       "market": "se",
       "type": "aon",
-      "products": {
-        "A.E": {
-          "booked": 9142.49,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 125328.0
-        },
-        "ROC": {
-          "booked": 19377.89,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 265638.0
-        },
-        "Welcome Page": {
-          "booked": 33928.42,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 117807.0
-        }
-      }
+      "products": {}
     },
     "1189": {
       "name": "Elgiganten SE – AON April 2027",
       "market": "se",
       "type": "aon",
-      "products": {
-        "A.E": {
-          "booked": 9142.49,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 125328.0
-        },
-        "ROC": {
-          "booked": 19377.89,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 265638.0
-        },
-        "Welcome Page": {
-          "booked": 33928.42,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 117807.0
-        }
-      }
+      "products": {}
     },
     "1175": {
       "name": "Elkjøp NO – AON Juni",
       "market": "no",
       "type": "aon",
-      "products": {
-        "Welcome Page": {
-          "booked": 117499.81,
-          "delivered": 118269.67,
-          "pct": 100.7,
-          "impressions": 419396,
-          "clicks": 6105,
-          "ctr": 1.46,
-          "_units": 416666.0
-        },
-        "ROC": {
-          "booked": 23499.98,
-          "delivered": 23649.62,
-          "pct": 100.6,
-          "impressions": 331094,
-          "clicks": 387,
-          "ctr": 0.12,
-          "_units": 328999.0
-        }
-      }
+      "products": {}
     },
     "1190": {
       "name": "Elkjøp NO – AON Juli 2026",
       "market": "no",
       "type": "aon",
-      "products": {
-        "Welcome Page": {
-          "booked": 56400.0,
-          "delivered": 56986.84,
-          "pct": 101.0,
-          "impressions": 202081,
-          "clicks": 2453,
-          "ctr": 1.21,
-          "_units": 200000.0
-        },
-        "ROC": {
-          "booked": 84599.96,
-          "delivered": 84752.18,
-          "pct": 100.2,
-          "impressions": 1186528,
-          "clicks": 1336,
-          "ctr": 0.11,
-          "_units": 1184397.0
-        }
-      }
+      "products": {}
     },
     "1191": {
       "name": "Elkjøp NO – AON Aug 2026",
       "market": "no",
       "type": "aon",
-      "products": {
-        "Welcome Page": {
-          "booked": 56400.0,
-          "delivered": 56986.56,
-          "pct": 101.0,
-          "impressions": 202080,
-          "clicks": 2378,
-          "ctr": 1.18,
-          "_units": 200000.0
-        },
-        "ROC": {
-          "booked": 84599.96,
-          "delivered": 84750.82,
-          "pct": 100.2,
-          "impressions": 1186509,
-          "clicks": 1580,
-          "ctr": 0.13,
-          "_units": 1184397.0
-        }
-      }
+      "products": {}
     },
     "1192": {
       "name": "Elkjøp NO – AON Sep 2026",
       "market": "no",
       "type": "aon",
-      "products": {
-        "Welcome Page": {
-          "booked": 56400.0,
-          "delivered": 15105.33,
-          "pct": 26.8,
-          "impressions": 53565,
-          "clicks": 1313,
-          "ctr": 2.45,
-          "_units": 200000.0
-        },
-        "ROC": {
-          "booked": 84599.96,
-          "delivered": 17318.96,
-          "pct": 20.5,
-          "impressions": 242465,
-          "clicks": 594,
-          "ctr": 0.24,
-          "_units": 1184397.0
-        }
-      }
+      "products": {}
     },
     "1200": {
       "name": "Elkjøp NO – AON Okt 2026",
       "market": "no",
       "type": "aon",
-      "products": {
-        "Welcome Page": {
-          "booked": 56400.0,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 200000.0
-        },
-        "ROC": {
-          "booked": 84599.96,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 1184397.0
-        }
-      }
+      "products": {}
     },
     "1221": {
       "name": "Elkjøp NO – AON Nov 2026",
       "market": "no",
       "type": "aon",
-      "products": {
-        "Welcome Page": {
-          "booked": 45120.0,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 160000.0
-        },
-        "ROC": {
-          "booked": 67680.0,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 947518.0
-        }
-      }
+      "products": {}
     },
     "1213": {
       "name": "Elkjøp NO – Black Week 2026",
       "market": "no",
       "type": "aon",
-      "products": {
-        "Welcome Page": {
-          "booked": 255679.81,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 453333.0
-        },
-        "ROC": {
-          "booked": 383519.94,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 2684634.0
-        }
-      }
+      "products": {}
     },
     "1202": {
       "name": "Elkjøp NO – AON Dec 2026",
       "market": "no",
       "type": "aon",
-      "products": {
-        "Welcome Page": {
-          "booked": 56400.0,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 200000.0
-        },
-        "ROC": {
-          "booked": 84599.96,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 1184397.0
-        }
-      }
+      "products": {}
     },
     "1203": {
       "name": "Elkjøp NO – AON Jan 2027",
       "market": "no",
       "type": "aon",
-      "products": {
-        "Welcome Page": {
-          "booked": 56400.0,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 200000.0
-        },
-        "ROC": {
-          "booked": 84599.96,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 1184397.0
-        }
-      }
+      "products": {}
     },
     "1204": {
       "name": "Elkjøp NO – AON Feb 2027",
       "market": "no",
       "type": "aon",
-      "products": {
-        "Welcome Page": {
-          "booked": 56400.0,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 200000.0
-        },
-        "ROC": {
-          "booked": 84599.96,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 1184397.0
-        }
-      }
+      "products": {}
     },
     "1205": {
       "name": "Elkjøp NO – AON Mars 2027",
       "market": "no",
       "type": "aon",
-      "products": {
-        "Welcome Page": {
-          "booked": 56400.0,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 200000.0
-        },
-        "ROC": {
-          "booked": 84599.96,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 1184397.0
-        }
-      }
+      "products": {}
     },
     "1206": {
       "name": "Elkjøp NO – AON April 2027",
       "market": "no",
       "type": "aon",
-      "products": {
-        "Welcome Page": {
-          "booked": 56400.0,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 200000.0
-        },
-        "ROC": {
-          "booked": 84599.96,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 1184397.0
-        }
-      }
+      "products": {}
     },
     "1218": {
       "name": "Elgiganten SE – PM Hisense v.28-36",
       "market": "se",
       "type": "pm",
-      "products": {
-        "A.E": {
-          "booked": 54156.44,
-          "delivered": 54403.66,
-          "pct": 100.5,
-          "impressions": 745782,
-          "clicks": 852,
-          "ctr": 0.11,
-          "_units": 742393.0
-        },
-        "ROC": {
-          "booked": 118643.26000000001,
-          "delivered": 118716.43,
-          "pct": 100.1,
-          "impressions": 1627401,
-          "clicks": 2112,
-          "ctr": 0.13,
-          "_units": 1626398.0
-        },
-        "Welcome Page": {
-          "booked": 0.0,
-          "delivered": 0.0,
-          "pct": null,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 0.0
-        }
-      }
+      "products": {}
     },
     "1313": {
       "name": "Elgiganten SE – PM Deals Indoor v.39-40",
       "market": "se",
       "type": "pm",
-      "products": {
-        "A.E": {
-          "booked": 39238.26,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 537890.0
-        },
-        "ROC": {
-          "booked": 31390.61,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 430312.0
-        },
-        "Welcome Page": {
-          "booked": 86324.26,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 299737.0
-        }
-      }
+      "products": {}
     },
     "1314": {
       "name": "Elgiganten SE – PM Deals Indoor v.41-43",
       "market": "se",
       "type": "pm",
-      "products": {
-        "A.E": {
-          "booked": 117715.14,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 1613675.0
-        },
-        "ROC": {
-          "booked": 94172.11,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 1290940.0
-        },
-        "Welcome Page": {
-          "booked": 258973.34,
-          "delivered": 0.0,
-          "pct": 0.0,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 899213.0
-        }
-      }
+      "products": {}
     },
     "1217": {
       "name": "Elkjøp NO – PM Hisense v.28-36",
       "market": "no",
       "type": "pm",
-      "products": {
-        "Welcome Page": {
-          "booked": 103663.2,
-          "delivered": 104245.81,
-          "pct": 100.6,
-          "impressions": 369666,
-          "clicks": 6904,
-          "ctr": 1.87,
-          "_units": 367600.0
-        },
-        "ROC": {
-          "booked": 33576.78,
-          "delivered": 32020.35,
-          "pct": 95.4,
-          "impressions": 448284,
-          "clicks": 599,
-          "ctr": 0.13,
-          "_units": 470074.0
-        },
-        "A.E": {
-          "booked": 28199.99,
-          "delivered": 26936.56,
-          "pct": 95.5,
-          "impressions": 377111,
-          "clicks": 515,
-          "ctr": 0.14,
-          "_units": 394799.0
-        }
-      }
+      "products": {}
     }
   }
 }
