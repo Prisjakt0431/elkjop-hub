@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-14T09:46:28Z",
+  "updated": "2026-09-14T16:13:16Z",
   "campaigns": {
     "1176": {
       "name": "Elgiganten SE – AON Juni",
@@ -101,29 +101,29 @@
       "products": {
         "A.E": {
           "booked": 9142.49,
-          "delivered": 4375.45,
-          "pct": 47.9,
-          "impressions": 59980,
-          "clicks": 26,
+          "delivered": 4449.05,
+          "pct": 48.7,
+          "impressions": 60989,
+          "clicks": 27,
           "ctr": 0.04,
           "_units": 125328.0
         },
         "ROC": {
           "booked": 19377.89,
-          "delivered": 9088.14,
-          "pct": 46.9,
-          "impressions": 124583,
-          "clicks": 220,
+          "delivered": 9312.6,
+          "pct": 48.1,
+          "impressions": 127660,
+          "clicks": 226,
           "ctr": 0.18,
           "_units": 265638.0
         },
         "Welcome Page": {
           "booked": 33928.42,
-          "delivered": 16329.31,
-          "pct": 48.1,
-          "impressions": 56699,
-          "clicks": 691,
-          "ctr": 1.22,
+          "delivered": 16714.66,
+          "pct": 49.3,
+          "impressions": 58037,
+          "clicks": 713,
+          "ctr": 1.23,
           "_units": 117807.0
         }
       }
@@ -482,19 +482,19 @@
       "products": {
         "Welcome Page": {
           "booked": 56400.0,
-          "delivered": 26570.6,
-          "pct": 47.1,
-          "impressions": 94222,
-          "clicks": 2327,
+          "delivered": 27268.55,
+          "pct": 48.3,
+          "impressions": 96697,
+          "clicks": 2386,
           "ctr": 2.47,
           "_units": 200000.0
         },
         "ROC": {
           "booked": 84599.96,
-          "delivered": 32974.64,
-          "pct": 39.0,
-          "impressions": 461644,
-          "clicks": 1385,
+          "delivered": 34275.86,
+          "pct": 40.5,
+          "impressions": 479861,
+          "clicks": 1426,
           "ctr": 0.3,
           "_units": 1184397.0
         }
