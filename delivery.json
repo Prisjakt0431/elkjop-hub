@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-22T13:11:50Z",
+  "updated": "2026-09-22T17:59:25Z",
   "campaigns": {
     "1176": {
       "name": "Elgiganten SE – AON Juni",
@@ -101,28 +101,28 @@
       "products": {
         "A.E": {
           "booked": 9142.49,
-          "delivered": 6852.2,
-          "pct": 74.9,
-          "impressions": 93932,
+          "delivered": 6908.22,
+          "pct": 75.6,
+          "impressions": 94700,
           "clicks": 38,
           "ctr": 0.04,
           "_units": 125328.0
         },
         "ROC": {
           "booked": 19377.89,
-          "delivered": 14359.62,
-          "pct": 74.1,
-          "impressions": 196846,
-          "clicks": 348,
+          "delivered": 14512.88,
+          "pct": 74.9,
+          "impressions": 198947,
+          "clicks": 353,
           "ctr": 0.18,
           "_units": 265638.0
         },
         "Welcome Page": {
           "booked": 33928.42,
-          "delivered": 25658.21,
-          "pct": 75.6,
-          "impressions": 89091,
-          "clicks": 1146,
+          "delivered": 25860.67,
+          "pct": 76.2,
+          "impressions": 89794,
+          "clicks": 1154,
           "ctr": 1.29,
           "_units": 117807.0
         }
@@ -482,19 +482,19 @@
       "products": {
         "Welcome Page": {
           "booked": 56400.0,
-          "delivered": 41737.13,
-          "pct": 74.0,
-          "impressions": 148004,
-          "clicks": 3618,
+          "delivered": 42110.21,
+          "pct": 74.7,
+          "impressions": 149327,
+          "clicks": 3643,
           "ctr": 2.44,
           "_units": 200000.0
         },
         "ROC": {
           "booked": 84599.96,
-          "delivered": 58567.76,
-          "pct": 69.2,
-          "impressions": 819947,
-          "clicks": 2252,
+          "delivered": 59342.12,
+          "pct": 70.1,
+          "impressions": 830788,
+          "clicks": 2264,
           "ctr": 0.27,
           "_units": 1184397.0
         }
@@ -735,70 +735,36 @@
       }
     },
     "1313": {
-      "name": "Elgiganten SE – PM Deals Indoor v.39-40",
+      "name": "Elgiganten SE – PM Deals Indoor v.39-42",
       "market": "se",
       "type": "pm",
       "products": {
         "A.E": {
           "booked": 125562.43,
-          "delivered": 6563.83,
-          "pct": 5.2,
-          "impressions": 89979,
-          "clicks": 134,
-          "ctr": 0.15,
+          "delivered": 8186.42,
+          "pct": 6.5,
+          "impressions": 112222,
+          "clicks": 157,
+          "ctr": 0.14,
           "_units": 1721248.0
         },
         "ROC": {
           "booked": 125562.43,
-          "delivered": 6777.13,
-          "pct": 5.4,
-          "impressions": 92903,
-          "clicks": 268,
-          "ctr": 0.29,
+          "delivered": 7804.03,
+          "pct": 6.2,
+          "impressions": 106980,
+          "clicks": 296,
+          "ctr": 0.28,
           "_units": 1721248.0
         },
         "Welcome Page": {
           "booked": 376687.3,
-          "delivered": 17665.63,
-          "pct": 4.7,
-          "impressions": 61339,
-          "clicks": 610,
-          "ctr": 0.99,
+          "delivered": 20479.97,
+          "pct": 5.4,
+          "impressions": 71111,
+          "clicks": 688,
+          "ctr": 0.97,
           "_units": 1307942.0
-        }
-      }
-    },
-    "1314": {
-      "name": "Elgiganten SE – PM Deals Indoor v.41-43",
-      "market": "se",
-      "type": "pm",
-      "products": {
-        "A.E": {
-          "booked": 0.0,
-          "delivered": 0.0,
-          "pct": null,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 0.0
-        },
-        "ROC": {
-          "booked": 0.0,
-          "delivered": 0.0,
-          "pct": null,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 0.0
-        },
-        "Welcome Page": {
-          "booked": 0.0,
-          "delivered": 0.0,
-          "pct": null,
-          "impressions": 0,
-          "clicks": 0,
-          "ctr": null,
-          "_units": 0.0
         }
       }
     },
