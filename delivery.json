@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T19:52:00Z",
+  "updated": "2026-09-24T23:04:52Z",
   "campaigns": {
     "1176": {
       "name": "Elgiganten SE – AON Juni",
@@ -101,28 +101,28 @@
       "products": {
         "A.E": {
           "booked": 9142.49,
-          "delivered": 7519.24,
-          "pct": 82.2,
-          "impressions": 103076,
+          "delivered": 7558.41,
+          "pct": 82.7,
+          "impressions": 103613,
           "clicks": 39,
           "ctr": 0.04,
           "_units": 125328.0
         },
         "ROC": {
           "booked": 19377.89,
-          "delivered": 15811.8,
-          "pct": 81.6,
-          "impressions": 216753,
-          "clicks": 372,
+          "delivered": 15944.35,
+          "pct": 82.3,
+          "impressions": 218570,
+          "clicks": 374,
           "ctr": 0.17,
           "_units": 265638.0
         },
         "Welcome Page": {
           "booked": 33928.42,
-          "delivered": 28017.22,
-          "pct": 82.6,
-          "impressions": 97282,
-          "clicks": 1254,
+          "delivered": 28266.62,
+          "pct": 83.3,
+          "impressions": 98148,
+          "clicks": 1268,
           "ctr": 1.29,
           "_units": 117807.0
         }
@@ -482,19 +482,19 @@
       "products": {
         "Welcome Page": {
           "booked": 56400.0,
-          "delivered": 45953.03,
-          "pct": 81.5,
-          "impressions": 162954,
-          "clicks": 3994,
-          "ctr": 2.45,
+          "delivered": 46280.99,
+          "pct": 82.1,
+          "impressions": 164117,
+          "clicks": 4031,
+          "ctr": 2.46,
           "_units": 200000.0
         },
         "ROC": {
           "booked": 84599.96,
-          "delivered": 65522.42,
-          "pct": 77.4,
-          "impressions": 917312,
-          "clicks": 2528,
+          "delivered": 66019.07,
+          "pct": 78.0,
+          "impressions": 924265,
+          "clicks": 2555,
           "ctr": 0.28,
           "_units": 1184397.0
         }
@@ -741,29 +741,29 @@
       "products": {
         "A.E": {
           "booked": 125562.43,
-          "delivered": 18453.34,
-          "pct": 14.7,
-          "impressions": 252964,
-          "clicks": 330,
+          "delivered": 19180.71,
+          "pct": 15.3,
+          "impressions": 262935,
+          "clicks": 344,
           "ctr": 0.13,
           "_units": 1721248.0
         },
         "ROC": {
           "booked": 125562.43,
-          "delivered": 18034.18,
-          "pct": 14.4,
-          "impressions": 247218,
-          "clicks": 649,
+          "delivered": 18921.08,
+          "pct": 15.1,
+          "impressions": 259376,
+          "clicks": 671,
           "ctr": 0.26,
           "_units": 1721248.0
         },
         "Welcome Page": {
           "booked": 376687.3,
-          "delivered": 50367.17,
-          "pct": 13.4,
-          "impressions": 174886,
-          "clicks": 1633,
-          "ctr": 0.93,
+          "delivered": 54165.31,
+          "pct": 14.4,
+          "impressions": 188074,
+          "clicks": 1733,
+          "ctr": 0.92,
           "_units": 1307942.0
         }
       }
