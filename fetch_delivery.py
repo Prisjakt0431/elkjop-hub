@@ -48,9 +48,9 @@ CAMPAIGNS = [
     # Sweden – PM
     {"id": "1218", "token": "019132175ecc01e0ab007b67e0e5cbef", "name": "Elgiganten SE – PM Hisense v.28-36",      "market": "se", "type": "pm"},
     {"id": "1313", "token": "4ca74cd45f7a21be103aa115fc023231", "name": "Elgiganten SE – PM Deals Indoor v.39-42", "market": "se", "type": "pm"},
+    {"id": "1358", "token": "fbaf675796faf7bbf68794ba8ef9c8e2", "name": "Elgiganten SE – PM Apple AirPods v.43-44", "market": "se", "type": "pm"},
     # Norway – PM
     {"id": "1217", "token": "3ffac13756a99c735123d49719613246", "name": "Elkjøp NO – PM Hisense v.28-36",    "market": "no", "type": "pm"},
-    {"id": "1358", "token": "fbaf675796faf7bbf68794ba8ef9c8e2", "name": "Elkjøp NO – PM Apple AirPods v.43-44", "market": "no", "type": "pm"},
 ]
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (prisjakt delivery-checker/1.0)"}
