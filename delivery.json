@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10T18:17:01Z",
+  "updated": "2026-10-10T23:19:23Z",
   "campaigns": {
     "1176": {
       "name": "Elgiganten SE – AON Juni",
@@ -135,28 +135,28 @@
       "products": {
         "A.E": {
           "booked": 9142.49,
-          "delivered": 3126.28,
-          "pct": 34.2,
-          "impressions": 42856,
-          "clicks": 50,
+          "delivered": 3178.15,
+          "pct": 34.8,
+          "impressions": 43567,
+          "clicks": 52,
           "ctr": 0.12,
           "_units": 125328.0
         },
         "ROC": {
           "booked": 19377.89,
-          "delivered": 6442.01,
-          "pct": 33.2,
-          "impressions": 88309,
-          "clicks": 122,
+          "delivered": 6571.49,
+          "pct": 33.9,
+          "impressions": 90084,
+          "clicks": 124,
           "ctr": 0.14,
           "_units": 265638.0
         },
         "Welcome Page": {
           "booked": 33928.42,
-          "delivered": 11316.38,
-          "pct": 33.4,
-          "impressions": 39293,
-          "clicks": 539,
+          "delivered": 11600.06,
+          "pct": 34.2,
+          "impressions": 40278,
+          "clicks": 552,
           "ctr": 1.37,
           "_units": 117807.0
         }
@@ -507,19 +507,19 @@
       "products": {
         "Welcome Page": {
           "booked": 56400.0,
-          "delivered": 18906.97,
-          "pct": 33.5,
-          "impressions": 67046,
-          "clicks": 1678,
-          "ctr": 2.5,
+          "delivered": 19337.3,
+          "pct": 34.3,
+          "impressions": 68572,
+          "clicks": 1729,
+          "ctr": 2.52,
           "_units": 200000.0
         },
         "ROC": {
           "booked": 84599.96,
-          "delivered": 28097.49,
-          "pct": 33.2,
-          "impressions": 393364,
-          "clicks": 957,
+          "delivered": 28697.35,
+          "pct": 33.9,
+          "impressions": 401762,
+          "clicks": 974,
           "ctr": 0.24,
           "_units": 1184397.0
         }
@@ -741,28 +741,28 @@
       "products": {
         "A.E": {
           "booked": 125562.43,
-          "delivered": 90688.16,
-          "pct": 72.2,
-          "impressions": 1243181,
-          "clicks": 1647,
+          "delivered": 91896.99,
+          "pct": 73.2,
+          "impressions": 1259752,
+          "clicks": 1668,
           "ctr": 0.13,
           "_units": 1721248.0
         },
         "ROC": {
           "booked": 125562.43,
-          "delivered": 91980.96,
-          "pct": 73.3,
-          "impressions": 1260903,
-          "clicks": 3057,
+          "delivered": 92691.04,
+          "pct": 73.8,
+          "impressions": 1270637,
+          "clicks": 3086,
           "ctr": 0.24,
           "_units": 1721248.0
         },
         "Welcome Page": {
           "booked": 376687.3,
-          "delivered": 273012.77,
-          "pct": 72.5,
-          "impressions": 947961,
-          "clicks": 9373,
+          "delivered": 275697.79,
+          "pct": 73.2,
+          "impressions": 957284,
+          "clicks": 9462,
           "ctr": 0.99,
           "_units": 1307942.0
         }
