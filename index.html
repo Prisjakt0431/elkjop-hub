@@ -1428,7 +1428,7 @@
     };
     var today = new Date();
     today.setHours(0,0,0,0);
-    document.querySelectorAll('.status-badge.status-live').forEach(function(badge) {
+    document.querySelectorAll('.status-badge.status-live, .status-badge.status-confirmed').forEach(function(badge) {
       var card = badge.closest('[data-report-id]');
       if (!card) return;
       var periodEl = card.querySelector('.campaign-period');
@@ -1442,6 +1442,7 @@
       endDate.setHours(23,59,59,999);
       if (today > endDate) {
         badge.classList.remove("status-live");
+        badge.classList.remove("status-confirmed");
         badge.classList.add("status-ended");
         badge.textContent = "Avslutad";
       }
