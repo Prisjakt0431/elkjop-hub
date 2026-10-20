@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20T09:20:59Z",
+  "updated": "2026-10-20T14:47:41Z",
   "campaigns": {
     "1176": {
       "name": "Elgiganten SE – AON Juni",
@@ -135,28 +135,28 @@
       "products": {
         "A.E": {
           "booked": 9142.49,
-          "delivered": 6029.19,
-          "pct": 65.9,
-          "impressions": 82650,
+          "delivered": 6086.16,
+          "pct": 66.6,
+          "impressions": 83431,
           "clicks": 91,
           "ctr": 0.11,
           "_units": 125328.0
         },
         "ROC": {
           "booked": 19377.89,
-          "delivered": 12605.42,
-          "pct": 65.1,
-          "impressions": 172799,
-          "clicks": 238,
+          "delivered": 12804.21,
+          "pct": 66.1,
+          "impressions": 175524,
+          "clicks": 241,
           "ctr": 0.14,
           "_units": 265638.0
         },
         "Welcome Page": {
           "booked": 33928.42,
-          "delivered": 22331.81,
-          "pct": 65.8,
-          "impressions": 77541,
-          "clicks": 1036,
+          "delivered": 22631.33,
+          "pct": 66.7,
+          "impressions": 78581,
+          "clicks": 1054,
           "ctr": 1.34,
           "_units": 117807.0
         }
@@ -507,19 +507,19 @@
       "products": {
         "Welcome Page": {
           "booked": 56400.0,
-          "delivered": 36500.11,
-          "pct": 64.7,
-          "impressions": 129433,
-          "clicks": 3234,
-          "ctr": 2.5,
+          "delivered": 37051.7,
+          "pct": 65.7,
+          "impressions": 131389,
+          "clicks": 3264,
+          "ctr": 2.48,
           "_units": 200000.0
         },
         "ROC": {
           "booked": 84599.96,
-          "delivered": 54388.47,
-          "pct": 64.3,
-          "impressions": 761437,
-          "clicks": 1499,
+          "delivered": 55133.11,
+          "pct": 65.2,
+          "impressions": 771862,
+          "clicks": 1520,
           "ctr": 0.2,
           "_units": 1184397.0
         }
@@ -775,30 +775,64 @@
       "products": {
         "A.E": {
           "booked": 47436.72,
-          "delivered": 3738.17,
-          "pct": 7.9,
-          "impressions": 51244,
-          "clicks": 72,
+          "delivered": 4909.14,
+          "pct": 10.3,
+          "impressions": 67296,
+          "clicks": 94,
           "ctr": 0.14,
           "_units": 650277.0
         },
         "ROC": {
           "booked": 32256.94,
-          "delivered": 1598.01,
-          "pct": 5.0,
-          "impressions": 21906,
-          "clicks": 32,
-          "ctr": 0.15,
+          "delivered": 2141.48,
+          "pct": 6.6,
+          "impressions": 29356,
+          "clicks": 42,
+          "ctr": 0.14,
           "_units": 442188.0
         },
         "Welcome Page": {
           "booked": 110053.15,
-          "delivered": 10810.66,
-          "pct": 9.8,
-          "impressions": 37537,
-          "clicks": 564,
-          "ctr": 1.5,
+          "delivered": 13214.3,
+          "pct": 12.0,
+          "impressions": 45883,
+          "clicks": 679,
+          "ctr": 1.48,
           "_units": 382129.0
+        }
+      }
+    },
+    "1397": {
+      "name": "Elgiganten SE – PM Oura Xmas v.50-51",
+      "market": "se",
+      "type": "pm",
+      "products": {
+        "A.E": {
+          "booked": 41348.73,
+          "delivered": 0.0,
+          "pct": 0.0,
+          "impressions": 0,
+          "clicks": 0,
+          "ctr": null,
+          "_units": 566821.0
+        },
+        "ROC": {
+          "booked": 41348.73,
+          "delivered": 0.0,
+          "pct": 0.0,
+          "impressions": 0,
+          "clicks": 0,
+          "ctr": null,
+          "_units": 566821.0
+        },
+        "Welcome Page": {
+          "booked": 192960.58,
+          "delivered": 0.0,
+          "pct": 0.0,
+          "impressions": 0,
+          "clicks": 0,
+          "ctr": null,
+          "_units": 670002.0
         }
       }
     },
