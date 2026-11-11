@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T05:15:22Z",
+  "updated": "2026-11-11T13:45:50Z",
   "campaigns": {
     "1176": {
       "name": "Elgiganten SE – AON Juni",
@@ -169,29 +169,29 @@
       "products": {
         "A.E": {
           "booked": 9142.49,
-          "delivered": 5749.87,
-          "pct": 62.9,
-          "impressions": 78821,
+          "delivered": 5952.67,
+          "pct": 65.1,
+          "impressions": 81601,
           "clicks": 15,
           "ctr": 0.02,
           "_units": 125328.0
         },
         "ROC": {
           "booked": 19377.89,
-          "delivered": 12172.33,
-          "pct": 62.8,
-          "impressions": 166862,
-          "clicks": 353,
+          "delivered": 12509.13,
+          "pct": 64.6,
+          "impressions": 171479,
+          "clicks": 360,
           "ctr": 0.21,
           "_units": 265638.0
         },
         "Welcome Page": {
           "booked": 33928.42,
-          "delivered": 21503.52,
-          "pct": 63.4,
-          "impressions": 74665,
-          "clicks": 767,
-          "ctr": 1.03,
+          "delivered": 21975.55,
+          "pct": 64.8,
+          "impressions": 76304,
+          "clicks": 779,
+          "ctr": 1.02,
           "_units": 117807.0
         }
       }
@@ -532,20 +532,20 @@
       "products": {
         "Welcome Page": {
           "booked": 45120.0,
-          "delivered": 32026.74,
-          "pct": 71.0,
-          "impressions": 113570,
-          "clicks": 2375,
-          "ctr": 2.09,
+          "delivered": 32728.36,
+          "pct": 72.5,
+          "impressions": 116058,
+          "clicks": 2434,
+          "ctr": 2.1,
           "_units": 160000.0
         },
         "ROC": {
           "booked": 67680.0,
-          "delivered": 41735.66,
-          "pct": 61.7,
-          "impressions": 584298,
-          "clicks": 1646,
-          "ctr": 0.28,
+          "delivered": 44752.09,
+          "pct": 66.1,
+          "impressions": 626528,
+          "clicks": 1854,
+          "ctr": 0.3,
           "_units": 947518.0
         }
       }
