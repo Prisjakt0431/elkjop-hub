@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T09:37:39Z",
+  "updated": "2026-11-22T17:39:50Z",
   "campaigns": {
     "1176": {
       "name": "Elgiganten SE – AON Juni",
@@ -203,28 +203,28 @@
       "products": {
         "A.E": {
           "booked": 134537.28,
-          "delivered": 35775.54,
-          "pct": 26.6,
-          "impressions": 245211,
-          "clicks": 325,
+          "delivered": 37264.13,
+          "pct": 27.7,
+          "impressions": 255414,
+          "clicks": 336,
           "ctr": 0.13,
           "_units": 922139.0
         },
         "ROC": {
           "booked": 285156.48,
-          "delivered": 45980.45,
-          "pct": 16.1,
-          "impressions": 315157,
-          "clicks": 1434,
-          "ctr": 0.46,
+          "delivered": 47175.93,
+          "pct": 16.5,
+          "impressions": 323351,
+          "clicks": 1457,
+          "ctr": 0.45,
           "_units": 1954506.0
         },
         "Welcome Page": {
           "booked": 499276.22,
-          "delivered": 163993.54,
-          "pct": 32.8,
-          "impressions": 284711,
-          "clicks": 5502,
+          "delivered": 191794.75,
+          "pct": 38.4,
+          "impressions": 332977,
+          "clicks": 6440,
           "ctr": 1.93,
           "_units": 866799.0
         }
@@ -557,19 +557,19 @@
       "products": {
         "Welcome Page": {
           "booked": 255679.81,
-          "delivered": 106324.15,
-          "pct": 41.6,
-          "impressions": 188518,
-          "clicks": 3940,
+          "delivered": 109549.67,
+          "pct": 42.8,
+          "impressions": 194237,
+          "clicks": 4066,
           "ctr": 2.09,
           "_units": 453333.0
         },
         "ROC": {
           "booked": 383519.94,
-          "delivered": 127209.84,
-          "pct": 33.2,
-          "impressions": 890467,
-          "clicks": 1810,
+          "delivered": 131616.27,
+          "pct": 34.3,
+          "impressions": 921312,
+          "clicks": 1853,
           "ctr": 0.2,
           "_units": 2684634.0
         }
