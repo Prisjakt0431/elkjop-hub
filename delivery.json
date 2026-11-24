@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T04:40:25Z",
+  "updated": "2026-11-24T17:09:38Z",
   "campaigns": {
     "1176": {
       "name": "Elgiganten SE – AON Juni",
@@ -203,29 +203,29 @@
       "products": {
         "A.E": {
           "booked": 134537.28,
-          "delivered": 58926.18,
-          "pct": 43.8,
-          "impressions": 403889,
-          "clicks": 523,
-          "ctr": 0.13,
+          "delivered": 65772.39,
+          "pct": 48.9,
+          "impressions": 450814,
+          "clicks": 560,
+          "ctr": 0.12,
           "_units": 922139.0
         },
         "ROC": {
           "booked": 285156.48,
-          "delivered": 67000.99,
-          "pct": 23.5,
-          "impressions": 459235,
-          "clicks": 1952,
-          "ctr": 0.43,
+          "delivered": 72406.47,
+          "pct": 25.4,
+          "impressions": 496285,
+          "clicks": 2058,
+          "ctr": 0.41,
           "_units": 1954506.0
         },
         "Welcome Page": {
           "booked": 499276.22,
-          "delivered": 244753.92,
-          "pct": 49.0,
-          "impressions": 424920,
-          "clicks": 8316,
-          "ctr": 1.96,
+          "delivered": 267819.84,
+          "pct": 53.6,
+          "impressions": 464965,
+          "clicks": 9030,
+          "ctr": 1.94,
           "_units": 866799.0
         }
       }
@@ -557,19 +557,19 @@
       "products": {
         "Welcome Page": {
           "booked": 255679.81,
-          "delivered": 144102.56,
-          "pct": 56.4,
-          "impressions": 255501,
-          "clicks": 5092,
-          "ctr": 1.99,
+          "delivered": 147143.65,
+          "pct": 57.5,
+          "impressions": 260893,
+          "clicks": 5176,
+          "ctr": 1.98,
           "_units": 453333.0
         },
         "ROC": {
           "booked": 383519.94,
-          "delivered": 175375.51,
-          "pct": 45.7,
-          "impressions": 1227626,
-          "clicks": 2378,
+          "delivered": 188359.25,
+          "pct": 49.1,
+          "impressions": 1318512,
+          "clicks": 2534,
           "ctr": 0.19,
           "_units": 2684634.0
         }
